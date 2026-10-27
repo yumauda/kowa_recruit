@@ -2,88 +2,96 @@
 
 .p-header {
   position: fixed;
-  background: transparent;
   top: 0;
-  left: 0;
-  width: 100%;
-  height: rem(100);
-  z-index: 100;
   right: 0;
-  transition: 0.3s ease;
-}
-.p-header.js-header-scroll {
-  background: #fff;
-}
-.p-header .l-inner {
-  height: inherit;
+  left: 0;
+  z-index: 100;
+  border-bottom: 1px solid rgba($white, 0.18);
+  background-color: rgba(#080a0b, 0.4);
+  backdrop-filter: blur(rem(4));
 }
 
 .p-header__content {
-  height: inherit;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: rem(16);
 }
 
 .p-header__logo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: rem(112);
-  @include mq(md){
-    width: rem(157);
-    
+  position: relative;
+  z-index: 102;
+  display: block;
+  width: rem(184);
+
+  @include mq("md") {
+    width: clamp(rem(140), 17.1vw, rem(246));
   }
 }
 
 .p-header__logo img {
+  display: block;
   width: 100%;
   height: auto;
-  display: block;
+  object-fit: contain;
 }
 
-.p-header__btn {
+.p-header__nav {
   display: none;
-  @include mq(md){
-    width: rem(300);
-    height: rem(66);
-    background-color: #f6ab00;
-    border-radius: rem(4);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: rem(12);
-    color: $white;
-    font-weight: 800;
-    position: relative;
-    
-  }
-}
-
-.p-header__btn-text {
-  font-size: rem(18);
-  letter-spacing: 0.05em;
 
   @include mq("md") {
-    font-size: rem(20);
+    display: flex;
+    align-items: center;
+    margin-left: auto;
   }
 }
 
-.p-header__btn-icon {
-  width: rem(27);
-  height: rem(27);
+.p-header__nav-list {
+  display: flex;
+  align-items: center;
+  gap: clamp(rem(10), 3.35vw, rem(52));
+}
+
+.p-header__nav-item {
+  flex: 0 0 auto;
+}
+
+.p-header__nav-link {
+  color: $white;
+  font-size: clamp(rem(11), 1.08vw, rem(16));
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.p-header__entry {
   display: flex;
   align-items: center;
   justify-content: center;
-  position: absolute;
-  top: 50%;
-  right: rem(20);
-  transform: translateY(-50%);
+  gap: clamp(rem(6), 1vw, rem(14));
+  width: clamp(rem(100), 10.42vw, rem(150));
+  padding-top: rem(33);
+  padding-right: rem(12);
+  padding-bottom: rem(33);
+  padding-left: rem(12);
+  margin-left: clamp(rem(10), 3.35vw, rem(52));
+  background-color: #ed0015;
+  color: $white;
+  font-size: clamp(rem(12), 1.05vw, rem(15));
+  font-weight: 500;
+  white-space: nowrap;
 }
 
-.p-header__btn-icon img {
-  width: 100%;
-  height: 100%;
-  display: block;
+.p-header__entry-arrow {
+  color: $white;
+  font-size: rem(19);
+  line-height: 1;
+}
+
+.p-header__drawer {
+  position: relative;
+  z-index: 102;
+
+  @include mq("md") {
+    display: none;
+  }
 }

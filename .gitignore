@@ -4,6 +4,6 @@ node_modules
 .node-versions
 
 # ビルド成果物（自動生成されるファイル）
-css/
-images/
-dist/
+/css/
+/images/
+/dist/

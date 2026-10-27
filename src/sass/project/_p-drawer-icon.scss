@@ -1,0 +1,39 @@
+@use "../global" as *;
+
+.p-drawer-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: rem(60);
+  height: rem(60);
+  margin-left: auto;
+  background-color: #ed0015;
+}
+
+.p-drawer-icon__bars {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: rem(26);
+}
+
+.p-drawer-icon__bar1,
+.p-drawer-icon__bar3 {
+  display: block;
+  width: 100%;
+  height: rem(2);
+  background-color: $white;
+  transition: transform 0.3s ease;
+}
+
+.p-drawer-icon__bar3 {
+  margin-top: rem(8);
+}
+
+.p-drawer-icon.is-active .p-drawer-icon__bar1 {
+  transform: translateY(rem(5)) rotate(45deg);
+}
+
+.p-drawer-icon.is-active .p-drawer-icon__bar3 {
+  transform: translateY(rem(-5)) rotate(-45deg);
+}

@@ -1,8 +1,8 @@
 {
-  "name": "tank",
+  "name": "kowa-recruit",
   "version": "1.0.0",
   "type": "module",
-  "description": "tank使用",
+  "description": "恒和工業株式会社 採用サイト",
   "main": "index.js",
   "scripts": {
     "dev": "npm run compress:images && npm run generate:styles && run-p dev:*",

@@ -1,4 +1,5 @@
 @use "sass:math";
+@use "sass:map";
 
 ////////////////////
 // インナー幅設定
@@ -22,6 +23,9 @@ $second-font-family: "Open Sans", sans-serif;
 // ※検証ツールでしっかり反映されているか確認する
 
 body {
+  overflow-x: clip;
+  background-color: #f4f3f0;
+  color: #111;
   font-family: $base-font-family;
 }
 
@@ -54,15 +58,15 @@ $breakpoints: (
 
 //メディアクエリー
 $mediaquerys: (
-  sm: "screen and (min-width: #{map-get($breakpoints,'sm')}px)",
-  md: "screen and (min-width: #{map-get($breakpoints,'md')}px)",
-  lg: "screen and (min-width: #{map-get($breakpoints,'lg')}px)",
-  xl: "screen and (min-width: #{map-get($breakpoints,'xl')}px)",
+  sm: "screen and (min-width: #{map.get($breakpoints,'sm')}px)",
+  md: "screen and (min-width: #{map.get($breakpoints,'md')}px)",
+  lg: "screen and (min-width: #{map.get($breakpoints,'lg')}px)",
+  xl: "screen and (min-width: #{map.get($breakpoints,'xl')}px)",
 );
 
 // @include mq(){}で書くとブレークポイントが反映される（初期値はmd）
 @mixin mq($mediaquery: md) {
-  @media #{map-get($mediaquerys, $mediaquery)} {
+  @media #{map.get($mediaquerys, $mediaquery)} {
     @content;
   }
 }
