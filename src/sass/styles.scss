@@ -6,6 +6,11 @@
 @use "./layout/_l-inner";
 
 // Project
+@use "./project/_p-company-data";
+@use "./project/_p-company-distribution";
+@use "./project/_p-company-outline";
+@use "./project/_p-company-products";
+@use "./project/_p-company-works";
 @use "./project/_p-drawer-content";
 @use "./project/_p-drawer-icon";
 @use "./project/_p-footer";
@@ -17,6 +22,7 @@
 @use "./project/_p-home-interviews";
 @use "./project/_p-home-message";
 @use "./project/_p-home-works";
+@use "./project/_p-page-hero";
 
 // Component
 @use "./component/_c-link-button";

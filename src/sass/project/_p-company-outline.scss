@@ -1,0 +1,88 @@
+@use "../global" as *;
+
+.p-company-outline {
+  padding-top: rem(76);
+  background-color: #fff;
+
+  @include mq("md") {
+    padding-top: rem(110);
+    padding-bottom: rem(110);
+  }
+}
+
+.p-company-outline__layout {
+  @include mq("md") {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.p-company-outline__content {
+  @include mq("md") {
+    width: 50%;
+    padding-right: rem(50);
+  }
+}
+
+.p-company-outline__label {
+  color: #ed0015;
+  font-family: $second-font-family;
+  font-size: rem(14);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+.p-company-outline__content h2 {
+  margin-top: rem(10);
+  color: #333;
+  font-size: rem(36);
+  font-weight: 100;
+
+  @include mq("md") {
+    font-size: rem(50);
+  }
+}
+
+.p-company-outline__content dl {
+  margin-top: rem(34);
+}
+
+.p-company-outline__content dl > div {
+  display: flex;
+  padding-top: rem(12);
+  padding-bottom: rem(12);
+  border-bottom: 1px solid #ddd;
+  color: #555;
+  font-size: rem(14);
+  line-height: 1.8;
+
+  @include mq("md") {
+    font-size: rem(16);
+  }
+}
+
+.p-company-outline__content dt {
+  flex: 0 0 rem(72);
+}
+
+.p-company-outline__content dd {
+  flex: 1;
+}
+
+.p-company-outline__image {
+  aspect-ratio: 1;
+  margin-top: rem(44);
+  overflow: hidden;
+
+  @include mq("md") {
+    width: 50%;
+    margin-top: 0;
+  }
+}
+
+.p-company-outline__image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

@@ -1,9 +1,15 @@
 import { defineConfig } from 'vite';
 import { resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
+import { readdirSync } from 'fs';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
+const htmlEntries = Object.fromEntries(
+  readdirSync(__dirname)
+    .filter((file) => file.endsWith('.html'))
+    .map((file) => [file.replace(/\.html$/, ''), resolve(__dirname, file)])
+);
 
 export default defineConfig({
   plugins: [],
@@ -14,7 +20,7 @@ export default defineConfig({
     emptyOutDir: true,
     cssCodeSplit: false,
     rollupOptions: {
-      input: resolve(__dirname, 'index.html'),
+      input: htmlEntries,
       output: {
         entryFileNames: 'js/[name].js',
         assetFileNames: (assetInfo) => {

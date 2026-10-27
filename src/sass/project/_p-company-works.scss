@@ -1,0 +1,73 @@
+@use "../global" as *;
+
+.p-company-works {
+  padding-top: rem(76);
+  padding-bottom: rem(84);
+  background-color: #f2f1ee;
+
+  @include mq("md") {
+    padding-top: rem(105);
+    padding-bottom: rem(105);
+  }
+}
+
+.p-company-works__layout {
+  display: flex;
+  flex-direction: column-reverse;
+
+  @include mq("md") {
+    flex-direction: row;
+    align-items: center;
+    gap: rem(100);
+  }
+}
+
+.p-company-works__image {
+  aspect-ratio: 4 / 3;
+  margin-top: rem(44);
+  overflow: hidden;
+
+  @include mq("md") {
+    flex: 0 0 rem(500);
+    margin-top: 0;
+  }
+}
+
+.p-company-works__image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.p-company-works__content {
+  flex: 1;
+}
+
+.p-company-works__content h2 {
+  color: #333;
+  font-size: rem(30);
+  font-weight: 100;
+  line-height: 1.35;
+
+  @include mq("md") {
+    font-size: rem(50);
+    line-height: 1.2;
+  }
+}
+
+.p-company-works__content p {
+  margin-top: rem(30);
+  color: #555;
+  font-size: rem(15);
+  font-weight: 100;
+  line-height: 2;
+
+  @include mq("md") {
+    font-size: rem(18);
+  }
+}
+
+.p-company-works .c-link-button {
+  margin-top: rem(34);
+}
