@@ -1,0 +1,33 @@
+@use "../global" as *;
+
+.c-link-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: rem(300);
+  padding-top: rem(22);
+  padding-right: rem(24);
+  padding-bottom: rem(22);
+  padding-left: rem(24);
+  background-color: #ed0015;
+  color: $white;
+  font-size: rem(18);
+  font-weight: 100;
+  letter-spacing: 0.05em;
+
+  @include mq("md") {
+    max-width: rem(240);
+    padding-top: rem(19);
+    padding-right: rem(20);
+    padding-bottom: rem(19);
+    padding-left: rem(20);
+    font-size: rem(16);
+  }
+}
+
+.c-link-button--outline {
+  border: 1px solid #333;
+  background-color: transparent;
+  color: #333;
+}

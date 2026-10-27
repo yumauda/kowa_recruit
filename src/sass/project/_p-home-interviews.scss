@@ -1,0 +1,126 @@
+@use "../global" as *;
+
+.p-home-interviews {
+  padding-top: rem(32);
+  padding-bottom: rem(26);
+  background-color: #f2f1ee;
+
+  @include mq("md") {
+    padding-top: rem(76);
+    padding-bottom: rem(100);
+  }
+}
+
+.p-home-interviews__label {
+  color: #ed0015;
+  font-family: $second-font-family;
+  font-size: rem(14);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+
+  @include mq("md") {
+    font-size: rem(20);
+  }
+}
+
+.p-home-interviews__title {
+  margin-top: rem(10);
+  color: #333;
+  font-size: rem(24);
+  font-weight: 100;
+  letter-spacing: 0.05em;
+
+  @include mq("md") {
+    font-size: rem(36);
+  }
+}
+
+.p-home-interviews__list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: rem(12);
+  margin-top: rem(18);
+
+  @include mq("md") {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: rem(60);
+    margin-top: rem(34);
+  }
+}
+
+.p-home-interviews__card--third {
+  display: none;
+
+  @include mq("md") {
+    display: block;
+  }
+}
+
+.p-home-interviews__image {
+  aspect-ratio: 150 / 200;
+  overflow: hidden;
+  border-top-left-radius: rem(30);
+  border-bottom-right-radius: rem(30);
+
+  @include mq("md") {
+    aspect-ratio: 360 / 480;
+    border-top-left-radius: rem(45);
+    border-bottom-right-radius: rem(45);
+  }
+}
+
+.p-home-interviews__image picture,
+.p-home-interviews__image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.p-home-interviews__image img {
+  object-fit: cover;
+}
+
+.p-home-interviews__group {
+  width: fit-content;
+  min-width: rem(120);
+  margin-top: rem(10);
+  padding-top: rem(6);
+  padding-right: rem(10);
+  padding-bottom: rem(6);
+  padding-left: rem(10);
+  background-color: #ed0015;
+  color: $white;
+  font-size: rem(14);
+  font-weight: 100;
+  line-height: 1;
+
+  @include mq("md") {
+    min-width: rem(160);
+    font-size: rem(18);
+  }
+}
+
+.p-home-interviews__copy {
+  margin-top: rem(14);
+  color: #444;
+  font-size: rem(16);
+  font-weight: 100;
+  line-height: 1.45;
+
+  @include mq("md") {
+    margin-top: rem(20);
+    font-size: rem(24);
+    line-height: 1.75;
+  }
+}
+
+.p-home-interviews__name {
+  margin-top: rem(10);
+  color: #555;
+  font-size: rem(14);
+  font-weight: 100;
+
+  @include mq("md") {
+    font-size: rem(18);
+  }
+}
