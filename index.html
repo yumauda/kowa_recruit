@@ -159,33 +159,45 @@
 
     <section class="p-home-interviews" aria-labelledby="home-interviews-title">
       <div class="l-inner">
-        <div class="p-home-interviews__heading">
-          <p class="p-home-interviews__label">Interviews</p>
-          <h2 class="p-home-interviews__title" id="home-interviews-title">先輩社員インタビュー</h2>
+        <div class="p-home-interviews__heading-layout">
+          <div class="p-home-interviews__heading">
+            <p class="p-home-interviews__label">Interviews</p>
+            <h2 class="p-home-interviews__title" id="home-interviews-title">先輩社員インタビュー</h2>
+          </div>
+          <div class="p-home-interviews__navigation p-home-interviews__navigation--pc" role="group" aria-label="インタビュースライダー操作">
+            <button class="p-home-interviews__button p-home-interviews__button--prev js-interview-prev" type="button" aria-label="前のインタビューを表示"></button>
+            <button class="p-home-interviews__button p-home-interviews__button--next js-interview-next" type="button" aria-label="次のインタビューを表示"></button>
+          </div>
         </div>
-        <div class="p-home-interviews__list">
-          <a class="p-home-interviews__card" href="./interview.html">
-            <figure class="p-home-interviews__image">
-              <picture><source media="(min-width: 768px)" srcset="./images/common/top-interview-01-pc.webp"><img src="./images/common/top-interview-01-sp.webp" alt="技術グループの社員" width="300" height="400" loading="lazy" decoding="async"></picture>
-            </figure>
-            <p class="p-home-interviews__group">技術グループ</p>
-            <p class="p-home-interviews__copy">一つずつ学び、<br>自分の言葉で説明できるまでに。</p>
-            <p class="p-home-interviews__name">Y.Y（2023年入社）</p>
-          </a>
-          <a class="p-home-interviews__card" href="./interview.html">
-            <figure class="p-home-interviews__image">
-              <picture><source media="(min-width: 768px)" srcset="./images/common/top-interview-02-pc.webp"><img src="./images/common/top-interview-02-sp.webp" alt="技術グループの社員" width="300" height="400" loading="lazy" decoding="async"></picture>
-            </figure>
-            <p class="p-home-interviews__group">技術グループ</p>
-            <p class="p-home-interviews__copy">考えたものを形にし、試して、<br>さらに磨いていく。</p>
-            <p class="p-home-interviews__name">U.A（2014年入社）</p>
-          </a>
-          <a class="p-home-interviews__card p-home-interviews__card--third" href="./interview.html">
-            <figure class="p-home-interviews__image"><img src="./images/common/top-interview-03-pc.webp" alt="技術グループの社員" width="720" height="960" loading="lazy" decoding="async"></figure>
-            <p class="p-home-interviews__group">技術グループ</p>
-            <p class="p-home-interviews__copy">試験条件を整え、性能試験の<br>結果で製品の信頼を示す。</p>
-            <p class="p-home-interviews__name">Y.Y（2023年入社）</p>
-          </a>
+        <div class="p-home-interviews__slider-layout">
+          <button class="p-home-interviews__button p-home-interviews__button--prev p-home-interviews__button--sp js-interview-prev" type="button" aria-label="前のインタビューを表示"></button>
+          <div class="p-home-interviews__slider swiper js-interview-swiper">
+            <div class="p-home-interviews__list swiper-wrapper">
+              <a class="p-home-interviews__card swiper-slide" href="./interview.html">
+                <figure class="p-home-interviews__image">
+                  <picture><source media="(min-width: 768px)" srcset="./images/common/top-interview-01-pc.webp"><img src="./images/common/top-interview-01-sp.webp" alt="技術グループの社員" width="300" height="400" loading="lazy" decoding="async"></picture>
+                </figure>
+                <p class="p-home-interviews__group">技術グループ</p>
+                <p class="p-home-interviews__copy">一つずつ学び、<br>自分の言葉で説明できるまでに。</p>
+                <p class="p-home-interviews__name">Y.Y（2023年入社）</p>
+              </a>
+              <a class="p-home-interviews__card swiper-slide" href="./interview.html">
+                <figure class="p-home-interviews__image">
+                  <picture><source media="(min-width: 768px)" srcset="./images/common/top-interview-02-pc.webp"><img src="./images/common/top-interview-02-sp.webp" alt="技術グループの社員" width="300" height="400" loading="lazy" decoding="async"></picture>
+                </figure>
+                <p class="p-home-interviews__group">技術グループ</p>
+                <p class="p-home-interviews__copy">考えたものを形にし、試して、<br>さらに磨いていく。</p>
+                <p class="p-home-interviews__name">U.A（2014年入社）</p>
+              </a>
+              <a class="p-home-interviews__card swiper-slide" href="./interview.html">
+                <figure class="p-home-interviews__image"><img src="./images/common/top-interview-03-pc.webp" alt="技術グループの社員" width="720" height="960" loading="lazy" decoding="async"></figure>
+                <p class="p-home-interviews__group">技術グループ</p>
+                <p class="p-home-interviews__copy">試験条件を整え、性能試験の<br>結果で製品の信頼を示す。</p>
+                <p class="p-home-interviews__name">Y.Y（2023年入社）</p>
+              </a>
+            </div>
+          </div>
+          <button class="p-home-interviews__button p-home-interviews__button--next p-home-interviews__button--sp js-interview-next" type="button" aria-label="次のインタビューを表示"></button>
         </div>
       </div>
     </section>

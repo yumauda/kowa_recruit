@@ -11,6 +11,14 @@
   }
 }
 
+.p-home-interviews__heading-layout {
+  @include mq("md") {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+}
+
 .p-home-interviews__label {
   color: #ed0015;
   font-family: $second-font-family;
@@ -35,24 +43,100 @@
   }
 }
 
-.p-home-interviews__list {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: rem(12);
+.p-home-interviews__slider-layout {
+  display: flex;
+  align-items: flex-start;
+  width: calc(100% + rem(30));
   margin-top: rem(18);
-
-  @include mq("md") {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: rem(60);
-    margin-top: rem(34);
-  }
-}
-
-.p-home-interviews__card--third {
-  display: none;
+  margin-left: rem(-15);
 
   @include mq("md") {
     display: block;
+    width: 100%;
+    margin-top: rem(34);
+    margin-left: 0;
+  }
+}
+
+.p-home-interviews__slider {
+  flex: 1;
+  min-width: 0;
+}
+
+.p-home-interviews__list {
+  align-items: flex-start;
+}
+
+.p-home-interviews__navigation {
+  display: flex;
+  align-items: center;
+  column-gap: rem(28);
+}
+
+.p-home-interviews__navigation--pc {
+  display: none;
+
+  @include mq("md") {
+    display: flex;
+  }
+}
+
+.p-home-interviews__button {
+  position: relative;
+  flex: 0 0 rem(39);
+  width: rem(39);
+  aspect-ratio: 1;
+  padding-top: 0;
+  padding-right: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+
+  &::before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: rem(15);
+    aspect-ratio: 1;
+    border-top: rem(1.5) solid #333;
+    border-left: rem(1.5) solid #333;
+    content: "";
+  }
+
+  &:disabled {
+    cursor: default;
+    opacity: 0.35;
+  }
+
+  &:focus-visible {
+    outline: rem(2) solid #ed0015;
+    outline-offset: rem(3);
+  }
+
+  @include mq("md") {
+    flex-basis: rem(68);
+    width: rem(68);
+    border: rem(1.5) solid #333;
+    border-radius: 50%;
+  }
+}
+
+.p-home-interviews__button--prev::before {
+  transform: translate(-35%, -50%) rotate(-45deg);
+}
+
+.p-home-interviews__button--next::before {
+  transform: translate(-65%, -50%) rotate(135deg);
+}
+
+.p-home-interviews__button--sp {
+  margin-top: rem(88);
+
+  @include mq("md") {
+    display: none;
   }
 }
 

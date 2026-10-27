@@ -1,3 +1,7 @@
+import Swiper from 'swiper';
+import { A11y, Keyboard } from 'swiper/modules';
+import 'swiper/css';
+
 const drawerButton = document.querySelector('.js-drawer-button');
 const drawer = document.querySelector('.js-drawer');
 
@@ -69,3 +73,50 @@ careerTabs.forEach((tab) => {
     target.hidden = false;
   });
 });
+
+const interviewSwiperElement = document.querySelector('.js-interview-swiper');
+
+if (interviewSwiperElement) {
+  const previousButtons = document.querySelectorAll('.js-interview-prev');
+  const nextButtons = document.querySelectorAll('.js-interview-next');
+  const interviewSwiper = new Swiper(interviewSwiperElement, {
+    modules: [A11y, Keyboard],
+    a11y: {
+      enabled: true,
+      containerMessage: '先輩社員インタビュー一覧',
+      slideLabelMessage: '{{index}} / {{slidesLength}}',
+    },
+    keyboard: {
+      enabled: true,
+      onlyInViewport: true,
+    },
+    slidesPerView: 2,
+    spaceBetween: 12,
+    speed: 600,
+    watchOverflow: true,
+    breakpoints: {
+      768: {
+        slidesPerView: 3,
+        spaceBetween: 60,
+      },
+    },
+  });
+
+  const updateInterviewNavigation = () => {
+    previousButtons.forEach((button) => {
+      button.disabled = interviewSwiper.isLocked || interviewSwiper.isBeginning;
+    });
+    nextButtons.forEach((button) => {
+      button.disabled = interviewSwiper.isLocked || interviewSwiper.isEnd;
+    });
+  };
+
+  previousButtons.forEach((button) => {
+    button.addEventListener('click', () => interviewSwiper.slidePrev());
+  });
+  nextButtons.forEach((button) => {
+    button.addEventListener('click', () => interviewSwiper.slideNext());
+  });
+  interviewSwiper.on('slideChange lock unlock resize breakpoint', updateInterviewNavigation);
+  updateInterviewNavigation();
+}
