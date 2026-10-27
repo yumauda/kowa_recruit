@@ -1,243 +1,439 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="format-detection" content="telephone=no">
-  <title>恒和工業株式会社 採用サイト</title>
-  <meta name="description" content="恒和工業株式会社の採用サイトです。配電技術を支える仕事、社員、成長環境、募集要項をご紹介します。">
-  <meta name="robots" content="index,follow">
-  <meta name="theme-color" content="#080a0b">
-  <meta property="og:locale" content="ja_JP">
-  <meta property="og:site_name" content="恒和工業株式会社 採用サイト">
-  <meta property="og:title" content="恒和工業株式会社 採用サイト">
-  <meta property="og:description" content="その好奇心が、次の配電技術を作っていく。">
-  <meta property="og:type" content="website">
-  <link rel="icon" type="image/webp" href="./images/common/logo-white.webp">
-  <link rel="stylesheet" href="./css/styles.css">
-  <script type="module" src="./js/script.js"></script>
-</head>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <title>恒和工業株式会社 採用サイト</title>
+    <meta
+      name="description"
+      content="恒和工業株式会社の採用サイトです。配電技術を支える仕事、社員、成長環境、募集要項をご紹介します。"
+   >
+    <meta name="robots" content="index,follow">
+    <meta name="theme-color" content="#080a0b">
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:site_name" content="恒和工業株式会社 採用サイト">
+    <meta property="og:title" content="恒和工業株式会社 採用サイト">
+    <meta property="og:description" content="その好奇心が、次の配電技術を作っていく。">
+    <meta property="og:type" content="website">
+    <link rel="icon" type="image/webp" href="./images/common/logo-white.webp">
+    <link rel="stylesheet" href="./css/styles.css">
+    <script type="module" src="./js/script.js">
+    </script>
+  </head>
 
-<body>
-  <header class="p-header js-header">
-    <div class="l-inner">
-      <div class="p-header__content">
-        <a class="p-header__logo" href="./index.html" aria-label="恒和工業株式会社 採用サイト トップ">
-          <img src="./images/common/logo-white.webp" alt="恒和工業株式会社" width="520" height="120" decoding="async">
-        </a>
-
-        <nav class="p-header__nav" aria-label="メインナビゲーション">
-          <ul class="p-header__nav-list">
-            <li class="p-header__nav-item"><a class="p-header__nav-link" href="./company.html">会社を知る</a></li>
-            <li class="p-header__nav-item"><a class="p-header__nav-link" href="./works.html">仕事を知る</a></li>
-            <li class="p-header__nav-item"><a class="p-header__nav-link" href="./people.html">人を知る</a></li>
-            <li class="p-header__nav-item"><a class="p-header__nav-link" href="./career.html">成長・キャリア</a></li>
-            <li class="p-header__nav-item"><a class="p-header__nav-link" href="./environment.html">働く環境</a></li>
-          </ul>
-          <a class="p-header__entry" href="./recruit.html">
-            <span>募集要項</span>
-            <span class="p-header__entry-arrow" aria-hidden="true">↗</span>
+  <body>
+    <header class="p-header js-header">
+      <div class="l-inner">
+        <div class="p-header__content">
+          <a class="p-header__logo" href="./index.html" aria-label="恒和工業株式会社 採用サイト トップ">
+            <img
+              src="./images/common/logo-white.webp"
+              alt="恒和工業株式会社"
+              width="520"
+              height="120"
+              decoding="async"
+           >
           </a>
+
+          <nav class="p-header__nav" aria-label="メインナビゲーション">
+            <ul class="p-header__nav-list">
+              <li class="p-header__nav-item">
+                <a class="p-header__nav-link" href="./company.html">会社を知る</a>
+              </li>
+              <li class="p-header__nav-item">
+                <a class="p-header__nav-link" href="./works.html">仕事を知る</a>
+              </li>
+              <li class="p-header__nav-item">
+                <a class="p-header__nav-link" href="./people.html">人を知る</a>
+              </li>
+              <li class="p-header__nav-item">
+                <a class="p-header__nav-link" href="./career.html">成長・キャリア</a>
+              </li>
+              <li class="p-header__nav-item">
+                <a class="p-header__nav-link" href="./environment.html">働く環境</a>
+              </li>
+            </ul>
+            <a class="p-header__entry" href="./recruit.html">
+              <span>募集要項</span>
+              <span class="p-header__entry-arrow" aria-hidden="true">↗</span>
+            </a>
+          </nav>
+
+          <button
+            class="p-header__drawer p-drawer-icon js-drawer-button"
+            type="button"
+            aria-controls="global-drawer"
+            aria-expanded="false"
+            aria-label="メニューを開く"
+          >
+            <span class="p-drawer-icon__bars" aria-hidden="true">
+              <span class="p-drawer-icon__bar1">
+              </span>
+              <span class="p-drawer-icon__bar3">
+              </span>
+            </span>
+          </button>
+        </div>
+      </div>
+
+      <div class="p-header__drawer-content p-drawer-content js-drawer" id="global-drawer" aria-hidden="true" inert>
+        <nav class="p-drawer-content__nav" aria-label="モバイルナビゲーション">
+          <ul class="p-drawer-content__items">
+            <li class="p-drawer-content__list">
+              <a class="p-drawer-content__link" href="./company.html">会社を知る</a>
+            </li>
+            <li class="p-drawer-content__list">
+              <a class="p-drawer-content__link" href="./works.html">仕事を知る</a>
+            </li>
+            <li class="p-drawer-content__list">
+              <a class="p-drawer-content__link" href="./people.html">人を知る</a>
+            </li>
+            <li class="p-drawer-content__list">
+              <a class="p-drawer-content__link" href="./career.html">成長・キャリア</a>
+            </li>
+            <li class="p-drawer-content__list">
+              <a class="p-drawer-content__link" href="./environment.html">働く環境</a>
+            </li>
+            <li class="p-drawer-content__list">
+              <a class="p-drawer-content__link p-drawer-content__link--entry" href="./recruit.html">
+                募集要項
+                <span aria-hidden="true">↗</span>
+              </a>
+            </li>
+          </ul>
         </nav>
-
-        <button class="p-header__drawer p-drawer-icon js-drawer-button" type="button" aria-controls="global-drawer" aria-expanded="false" aria-label="メニューを開く">
-          <span class="p-drawer-icon__bars" aria-hidden="true">
-            <span class="p-drawer-icon__bar1"></span>
-            <span class="p-drawer-icon__bar3"></span>
-          </span>
-        </button>
       </div>
-    </div>
+    </header>
 
-    <div class="p-header__drawer-content p-drawer-content js-drawer" id="global-drawer" aria-hidden="true" inert>
-      <nav class="p-drawer-content__nav" aria-label="モバイルナビゲーション">
-        <ul class="p-drawer-content__items">
-          <li class="p-drawer-content__list"><a class="p-drawer-content__link" href="./company.html">会社を知る</a></li>
-          <li class="p-drawer-content__list"><a class="p-drawer-content__link" href="./works.html">仕事を知る</a></li>
-          <li class="p-drawer-content__list"><a class="p-drawer-content__link" href="./people.html">人を知る</a></li>
-          <li class="p-drawer-content__list"><a class="p-drawer-content__link" href="./career.html">成長・キャリア</a></li>
-          <li class="p-drawer-content__list"><a class="p-drawer-content__link" href="./environment.html">働く環境</a></li>
-          <li class="p-drawer-content__list"><a class="p-drawer-content__link p-drawer-content__link--entry" href="./recruit.html">募集要項 <span aria-hidden="true">↗</span></a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+    <main>
+      <section class="p-home-hero" aria-labelledby="home-hero-title">
+        <div class="p-home-hero__body">
+          <div class="l-inner">
+            <div class="p-home-hero__content">
+              <h1 class="p-home-hero__title" id="home-hero-title">
+                その
+                <span>好奇心</span>
+                が
+                <br>
+                次の配電技術を
+                <br>
+                作っていく。
+              </h1>
+              <p class="p-home-hero__text">
+                積み重ねてきたノウハウと、アイデアを形にできる設備。
+                <br class="u-desktop">
+                ここには、新しい製品に向き合える環境がある。
+              </p>
+              <div class="p-home-hero__links">
+                <a class="p-home-hero__link" href="./company.html">
+                  <span>私たちについて</span>
+                  <span class="p-home-hero__link-arrow" aria-hidden="true">→</span>
+                </a>
+                <a class="p-home-hero__link" href="#movie">
+                  <span>動画で見る</span>
+                  <span class="p-home-hero__link-arrow" aria-hidden="true">→</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <figure class="p-home-hero__image">
+          <img
+            src="./images/common/top-hero.webp"
+            alt="配電部材の製品開発に取り組む社員"
+            width="2880"
+            height="1400"
+            decoding="async"
+            fetchpriority="high"
+         >
+        </figure>
+      </section>
 
-  <main>
-    <section class="p-home-hero" aria-labelledby="home-hero-title">
-      <div class="p-home-hero__body">
-        <div class="l-inner">
-          <div class="p-home-hero__content">
-            <h1 class="p-home-hero__title" id="home-hero-title">
-              その<span>好奇心</span>が<br>
-              次の配電技術を<br>
-              作っていく。
-            </h1>
-            <p class="p-home-hero__text">
-              積み重ねてきたノウハウと、アイデアを形にできる設備。<br class="u-desktop">
-              ここには、新しい製品に向き合える環境がある。
-            </p>
-            <div class="p-home-hero__links">
-              <a class="p-home-hero__link" href="./company.html">
-                <span>私たちについて</span>
-                <span class="p-home-hero__link-arrow" aria-hidden="true">→</span>
-              </a>
-              <a class="p-home-hero__link" href="#movie">
-                <span>動画で見る</span>
-                <span class="p-home-hero__link-arrow" aria-hidden="true">→</span>
+      <section class="p-home-message" aria-labelledby="home-message-title">
+        <figure class="p-home-message__image" aria-hidden="true">
+          <picture>
+            <source media="(min-width: 768px)" srcset="./images/common/top-message-pc.webp">
+            <img src="./images/common/top-message-sp.webp" alt="" width="780" height="1200" decoding="async">
+          </picture>
+        </figure>
+        <div class="p-home-message__body">
+          <div class="l-inner">
+            <div class="p-home-message__content">
+              <p class="p-home-message__label">MESSAGE</p>
+              <h2 class="p-home-message__title" id="home-message-title">
+                あたりまえを守るには、
+                <br>
+                まだない答えがいる。
+              </h2>
+              <p class="p-home-message__text">
+                電気が、いつも通りに届くこと。
+                <br>
+                そのあたりまえは、同じものをつくり続けるだけでは守れません。
+                <br>
+                現場ごとに異なる課題に向き合い、形や材料を考え、つくり、試し、確かめる。
+                <br>
+                そうして生まれた一つひとつの製品が、電力インフラを支えています。
+                <br>
+                恒和工業は、自分たちで考え、手を動かし、これまでにない答えを形にしていく会社です。
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="p-home-works" aria-labelledby="home-works-title">
+        <figure class="p-home-works__image" aria-hidden="true">
+          <picture>
+            <source media="(min-width: 768px)" srcset="./images/common/top-works-pc.webp">
+            <img
+              src="./images/common/top-works-sp.webp"
+              alt=""
+              width="780"
+              height="1400"
+              loading="lazy"
+              decoding="async"
+           >
+          </picture>
+        </figure>
+        <div class="p-home-works__body">
+          <div class="l-inner">
+            <div class="p-home-works__content">
+              <p class="p-home-works__label">WORKS</p>
+              <h2 class="p-home-works__title" id="home-works-title">考え、つくり、確かめる仕事。</h2>
+              <p class="p-home-works__text">
+                お客様や現場の声を聞き、課題に合った形や材料を考え、設計し、試作品をつくる。さらに、性能や安全性を試験で確かめ、実際の現場で使える製品へと仕上げていきます。一つの答えにたどり着くまで、営業・技術・製造など、さまざまな立場の社員が知恵を出し合います。
+                <br>
+                考え、つくり、確かめる。その積み重ねによって、まだない答えを形にし、電力インフラを支えることが、恒和工業の仕事です。
+              </p>
+              <a class="c-link-button" href="./works.html">
+                <span>仕事を知る</span>
+                <span aria-hidden="true">→</span>
               </a>
             </div>
           </div>
         </div>
-      </div>
-      <figure class="p-home-hero__image">
-        <img src="./images/common/top-hero.webp" alt="配電部材の製品開発に取り組む社員" width="2880" height="1400" decoding="async" fetchpriority="high">
-      </figure>
-    </section>
+      </section>
 
-    <section class="p-home-message" aria-labelledby="home-message-title">
-      <figure class="p-home-message__image" aria-hidden="true">
-        <picture>
-          <source media="(min-width: 768px)" srcset="./images/common/top-message-pc.webp">
-          <img src="./images/common/top-message-sp.webp" alt="" width="780" height="1200" decoding="async">
-        </picture>
-      </figure>
-      <div class="p-home-message__body">
+      <section class="p-home-career" aria-labelledby="home-career-title">
         <div class="l-inner">
-          <div class="p-home-message__content">
-            <p class="p-home-message__label">MESSAGE</p>
-            <h2 class="p-home-message__title" id="home-message-title">あたりまえを守るには、<br>まだない答えがいる。</h2>
-            <p class="p-home-message__text">
-              電気が、いつも通りに届くこと。<br>
-              そのあたりまえは、同じものをつくり続けるだけでは守れません。<br>
-              現場ごとに異なる課題に向き合い、形や材料を考え、つくり、試し、確かめる。<br>
-              そうして生まれた一つひとつの製品が、電力インフラを支えています。<br>
-              恒和工業は、自分たちで考え、手を動かし、これまでにない答えを形にしていく会社です。
-            </p>
+          <div class="p-home-career__layout">
+            <div class="p-home-career__content">
+              <p class="p-home-career__label">CAREER UP</p>
+              <h2 class="p-home-career__title" id="home-career-title">
+                一歩ずつ、
+                <br>
+                できることを広げていく。
+              </h2>
+              <p class="p-home-career__text">
+                入社後は、先輩社員と仕事を進めながら、製品や業務の知識を身につけていきます。経験を重ねるにつれて、任される仕事や関わる範囲が少しずつ広がり、やがて自分の考えや判断で仕事を動かす役割へ。
+              </p>
+              <a class="c-link-button" href="./career.html">
+                <span>成長・キャリアを知る</span>
+                <span aria-hidden="true">→</span>
+              </a>
+            </div>
+            <figure class="p-home-career__image">
+              <picture>
+                <source media="(min-width: 768px)" srcset="./images/common/top-career-pc.webp">
+                <img
+                  src="./images/common/top-career-sp.webp"
+                  alt="製品について先輩社員から学ぶ若手社員"
+                  width="780"
+                  height="439"
+                  loading="lazy"
+                  decoding="async"
+               >
+              </picture>
+            </figure>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="p-home-works" aria-labelledby="home-works-title">
-      <figure class="p-home-works__image" aria-hidden="true">
-        <picture>
-          <source media="(min-width: 768px)" srcset="./images/common/top-works-pc.webp">
-          <img src="./images/common/top-works-sp.webp" alt="" width="780" height="1400" loading="lazy" decoding="async">
-        </picture>
-      </figure>
-      <div class="p-home-works__body">
+      <section class="p-home-interviews" aria-labelledby="home-interviews-title">
         <div class="l-inner">
-          <div class="p-home-works__content">
-            <p class="p-home-works__label">WORKS</p>
-            <h2 class="p-home-works__title" id="home-works-title">考え、つくり、確かめる仕事。</h2>
-            <p class="p-home-works__text">お客様や現場の声を聞き、課題に合った形や材料を考え、設計し、試作品をつくる。さらに、性能や安全性を試験で確かめ、実際の現場で使える製品へと仕上げていきます。一つの答えにたどり着くまで、営業・技術・製造など、さまざまな立場の社員が知恵を出し合います。<br>考え、つくり、確かめる。その積み重ねによって、まだない答えを形にし、電力インフラを支えることが、恒和工業の仕事です。</p>
-            <a class="c-link-button" href="./works.html"><span>仕事を知る</span><span aria-hidden="true">→</span></a>
+          <div class="p-home-interviews__heading-layout">
+            <div class="p-home-interviews__heading">
+              <p class="p-home-interviews__label">Interviews</p>
+              <h2 class="p-home-interviews__title" id="home-interviews-title">先輩社員インタビュー</h2>
+            </div>
+            <div
+              class="p-home-interviews__navigation p-home-interviews__navigation--pc"
+              role="group"
+              aria-label="インタビュースライダー操作"
+            >
+              <button
+                class="p-home-interviews__button p-home-interviews__button--prev js-interview-prev"
+                type="button"
+                aria-label="前のインタビューを表示"
+              >
+              </button>
+              <button
+                class="p-home-interviews__button p-home-interviews__button--next js-interview-next"
+                type="button"
+                aria-label="次のインタビューを表示"
+              >
+              </button>
+            </div>
+          </div>
+          <div class="p-home-interviews__slider-layout">
+            <button
+              class="p-home-interviews__button p-home-interviews__button--prev p-home-interviews__button--sp js-interview-prev"
+              type="button"
+              aria-label="前のインタビューを表示"
+            >
+            </button>
+            <div class="p-home-interviews__slider swiper js-interview-swiper">
+              <div class="p-home-interviews__list swiper-wrapper">
+                <a class="p-home-interviews__card swiper-slide" href="./interview.html">
+                  <figure class="p-home-interviews__image">
+                    <picture>
+                      <source media="(min-width: 768px)" srcset="./images/common/top-interview-01-pc.webp">
+                      <img
+                        src="./images/common/top-interview-01-sp.webp"
+                        alt="技術グループの社員"
+                        width="300"
+                        height="400"
+                        loading="lazy"
+                        decoding="async"
+                     >
+                    </picture>
+                  </figure>
+                  <p class="p-home-interviews__group">技術グループ</p>
+                  <p class="p-home-interviews__copy">
+                    一つずつ学び、
+                    <br>
+                    自分の言葉で説明できるまでに。
+                  </p>
+                  <p class="p-home-interviews__name">Y.Y（2023年入社）</p>
+                </a>
+                <a class="p-home-interviews__card swiper-slide" href="./interview.html">
+                  <figure class="p-home-interviews__image">
+                    <picture>
+                      <source media="(min-width: 768px)" srcset="./images/common/top-interview-02-pc.webp">
+                      <img
+                        src="./images/common/top-interview-02-sp.webp"
+                        alt="技術グループの社員"
+                        width="300"
+                        height="400"
+                        loading="lazy"
+                        decoding="async"
+                     >
+                    </picture>
+                  </figure>
+                  <p class="p-home-interviews__group">技術グループ</p>
+                  <p class="p-home-interviews__copy">
+                    考えたものを形にし、試して、
+                    <br>
+                    さらに磨いていく。
+                  </p>
+                  <p class="p-home-interviews__name">U.A（2014年入社）</p>
+                </a>
+                <a class="p-home-interviews__card swiper-slide" href="./interview.html">
+                  <figure class="p-home-interviews__image">
+                    <img
+                      src="./images/common/top-interview-03-pc.webp"
+                      alt="技術グループの社員"
+                      width="720"
+                      height="960"
+                      loading="lazy"
+                      decoding="async"
+                   >
+                  </figure>
+                  <p class="p-home-interviews__group">技術グループ</p>
+                  <p class="p-home-interviews__copy">
+                    試験条件を整え、性能試験の
+                    <br>
+                    結果で製品の信頼を示す。
+                  </p>
+                  <p class="p-home-interviews__name">Y.Y（2023年入社）</p>
+                </a>
+              </div>
+            </div>
+            <button
+              class="p-home-interviews__button p-home-interviews__button--next p-home-interviews__button--sp js-interview-next"
+              type="button"
+              aria-label="次のインタビューを表示"
+            >
+            </button>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="p-home-career" aria-labelledby="home-career-title">
-      <div class="l-inner">
-        <div class="p-home-career__layout">
-          <div class="p-home-career__content">
-            <p class="p-home-career__label">CAREER UP</p>
-            <h2 class="p-home-career__title" id="home-career-title">一歩ずつ、<br>できることを広げていく。</h2>
-            <p class="p-home-career__text">入社後は、先輩社員と仕事を進めながら、製品や業務の知識を身につけていきます。経験を重ねるにつれて、任される仕事や関わる範囲が少しずつ広がり、やがて自分の考えや判断で仕事を動かす役割へ。</p>
-            <a class="c-link-button" href="./career.html"><span>成長・キャリアを知る</span><span aria-hidden="true">→</span></a>
-          </div>
-          <figure class="p-home-career__image">
-            <picture>
-              <source media="(min-width: 768px)" srcset="./images/common/top-career-pc.webp">
-              <img src="./images/common/top-career-sp.webp" alt="製品について先輩社員から学ぶ若手社員" width="780" height="439" loading="lazy" decoding="async">
-            </picture>
-          </figure>
-        </div>
-      </div>
-    </section>
-
-    <section class="p-home-interviews" aria-labelledby="home-interviews-title">
-      <div class="l-inner">
-        <div class="p-home-interviews__heading-layout">
-          <div class="p-home-interviews__heading">
-            <p class="p-home-interviews__label">Interviews</p>
-            <h2 class="p-home-interviews__title" id="home-interviews-title">先輩社員インタビュー</h2>
-          </div>
-          <div class="p-home-interviews__navigation p-home-interviews__navigation--pc" role="group" aria-label="インタビュースライダー操作">
-            <button class="p-home-interviews__button p-home-interviews__button--prev js-interview-prev" type="button" aria-label="前のインタビューを表示"></button>
-            <button class="p-home-interviews__button p-home-interviews__button--next js-interview-next" type="button" aria-label="次のインタビューを表示"></button>
-          </div>
-        </div>
-        <div class="p-home-interviews__slider-layout">
-          <button class="p-home-interviews__button p-home-interviews__button--prev p-home-interviews__button--sp js-interview-prev" type="button" aria-label="前のインタビューを表示"></button>
-          <div class="p-home-interviews__slider swiper js-interview-swiper">
-            <div class="p-home-interviews__list swiper-wrapper">
-              <a class="p-home-interviews__card swiper-slide" href="./interview.html">
-                <figure class="p-home-interviews__image">
-                  <picture><source media="(min-width: 768px)" srcset="./images/common/top-interview-01-pc.webp"><img src="./images/common/top-interview-01-sp.webp" alt="技術グループの社員" width="300" height="400" loading="lazy" decoding="async"></picture>
-                </figure>
-                <p class="p-home-interviews__group">技術グループ</p>
-                <p class="p-home-interviews__copy">一つずつ学び、<br>自分の言葉で説明できるまでに。</p>
-                <p class="p-home-interviews__name">Y.Y（2023年入社）</p>
-              </a>
-              <a class="p-home-interviews__card swiper-slide" href="./interview.html">
-                <figure class="p-home-interviews__image">
-                  <picture><source media="(min-width: 768px)" srcset="./images/common/top-interview-02-pc.webp"><img src="./images/common/top-interview-02-sp.webp" alt="技術グループの社員" width="300" height="400" loading="lazy" decoding="async"></picture>
-                </figure>
-                <p class="p-home-interviews__group">技術グループ</p>
-                <p class="p-home-interviews__copy">考えたものを形にし、試して、<br>さらに磨いていく。</p>
-                <p class="p-home-interviews__name">U.A（2014年入社）</p>
-              </a>
-              <a class="p-home-interviews__card swiper-slide" href="./interview.html">
-                <figure class="p-home-interviews__image"><img src="./images/common/top-interview-03-pc.webp" alt="技術グループの社員" width="720" height="960" loading="lazy" decoding="async"></figure>
-                <p class="p-home-interviews__group">技術グループ</p>
-                <p class="p-home-interviews__copy">試験条件を整え、性能試験の<br>結果で製品の信頼を示す。</p>
-                <p class="p-home-interviews__name">Y.Y（2023年入社）</p>
+      <section class="p-home-environment" aria-labelledby="home-environment-title">
+        <figure class="p-home-environment__image" aria-hidden="true">
+          <picture>
+            <source media="(min-width: 768px)" srcset="./images/common/top-environment-pc.webp">
+            <img
+              src="./images/common/top-environment-sp.webp"
+              alt=""
+              width="780"
+              height="1155"
+              loading="lazy"
+              decoding="async"
+           >
+          </picture>
+        </figure>
+        <div class="p-home-environment__body">
+          <div class="l-inner">
+            <div class="p-home-environment__panel">
+              <p class="p-home-environment__label">ENVIRONMENT</p>
+              <h2 class="p-home-environment__title" id="home-environment-title">
+                挑戦を続けられる、
+                <br>
+                確かな支えがある。
+              </h2>
+              <p class="p-home-environment__text">
+                安心して仕事を続けながら、一つひとつ経験を積み、自分なりの技術を身につけていく。長く働くことが、そのまま技術者としての成長につながる職場です。
+              </p>
+              <a class="c-link-button" href="./environment.html">
+                <span>働く環境</span>
+                <span aria-hidden="true">→</span>
               </a>
             </div>
           </div>
-          <button class="p-home-interviews__button p-home-interviews__button--next p-home-interviews__button--sp js-interview-next" type="button" aria-label="次のインタビューを表示"></button>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="p-home-environment" aria-labelledby="home-environment-title">
-      <figure class="p-home-environment__image" aria-hidden="true">
-        <picture><source media="(min-width: 768px)" srcset="./images/common/top-environment-pc.webp"><img src="./images/common/top-environment-sp.webp" alt="" width="780" height="1155" loading="lazy" decoding="async"></picture>
-      </figure>
-      <div class="p-home-environment__body">
+      <section class="p-home-entry" aria-labelledby="home-entry-title">
         <div class="l-inner">
-          <div class="p-home-environment__panel">
-            <p class="p-home-environment__label">ENVIRONMENT</p>
-            <h2 class="p-home-environment__title" id="home-environment-title">挑戦を続けられる、<br>確かな支えがある。</h2>
-            <p class="p-home-environment__text">安心して仕事を続けながら、一つひとつ経験を積み、自分なりの技術を身につけていく。長く働くことが、そのまま技術者としての成長につながる職場です。</p>
-            <a class="c-link-button" href="./environment.html"><span>働く環境</span><span aria-hidden="true">→</span></a>
+          <div class="p-home-entry__content">
+            <h2 class="p-home-entry__title" id="home-entry-title">
+              次の恒和工業を、
+              <br>
+              一緒につくろう。
+            </h2>
+            <div class="p-home-entry__links">
+              <a class="c-link-button c-link-button--outline" href="./recruit.html">
+                <span>募集要項</span>
+                <span aria-hidden="true">→</span>
+              </a>
+              <a class="c-link-button" href="./recruit.html#entry">
+                <span>エントリー</span>
+                <span aria-hidden="true">→</span>
+              </a>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </main>
 
-    <section class="p-home-entry" aria-labelledby="home-entry-title">
+    <footer class="p-footer">
       <div class="l-inner">
-        <div class="p-home-entry__content">
-          <h2 class="p-home-entry__title" id="home-entry-title">次の恒和工業を、<br>一緒につくろう。</h2>
-          <div class="p-home-entry__links">
-            <a class="c-link-button c-link-button--outline" href="./recruit.html"><span>募集要項</span><span aria-hidden="true">→</span></a>
-            <a class="c-link-button" href="./recruit.html#entry"><span>エントリー</span><span aria-hidden="true">→</span></a>
-          </div>
+        <div class="p-footer__content">
+          <a class="p-footer__logo" href="./index.html">
+            <img
+              src="./images/common/logo-white.webp"
+              alt="恒和工業株式会社"
+              width="520"
+              height="120"
+              loading="lazy"
+              decoding="async"
+           >
+          </a>
+          <small class="p-footer__copyright">copyright KOWA KOGYO Co., Ltd. All rights reserved.</small>
         </div>
       </div>
-    </section>
-  </main>
-
-  <footer class="p-footer">
-    <div class="l-inner">
-      <div class="p-footer__content">
-        <a class="p-footer__logo" href="./index.html"><img src="./images/common/logo-white.webp" alt="恒和工業株式会社" width="520" height="120" loading="lazy" decoding="async"></a>
-        <small class="p-footer__copyright">copyright KOWA KOGYO Co., Ltd. All rights reserved.</small>
-      </div>
-    </div>
-  </footer>
-</body>
+    </footer>
+  </body>
 </html>
