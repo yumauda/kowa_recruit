@@ -8,6 +8,7 @@ if (drawerButton && drawer) {
     drawerButton.setAttribute('aria-expanded', 'false');
     drawerButton.setAttribute('aria-label', 'メニューを開く');
     drawer.setAttribute('aria-hidden', 'true');
+    drawer.inert = true;
     document.body.classList.remove('no-scroll');
   };
 
@@ -17,6 +18,7 @@ if (drawerButton && drawer) {
     drawerButton.setAttribute('aria-expanded', 'true');
     drawerButton.setAttribute('aria-label', 'メニューを閉じる');
     drawer.setAttribute('aria-hidden', 'false');
+    drawer.inert = false;
     document.body.classList.add('no-scroll');
   };
 
