@@ -45,3 +45,25 @@ if (drawerButton && drawer) {
     if (window.innerWidth >= 768) closeDrawer();
   });
 }
+
+const careerTabs = document.querySelectorAll('.js-career-tab');
+
+careerTabs.forEach((tab) => {
+  tab.addEventListener('click', () => {
+    const target = document.querySelector(`#career-${tab.dataset.career}`);
+    if (!target) return;
+
+    careerTabs.forEach((item) => {
+      item.classList.remove('is-active');
+      item.setAttribute('aria-selected', 'false');
+    });
+    document.querySelectorAll('.p-career-plan__panel').forEach((panel) => {
+      panel.classList.remove('is-active');
+      panel.hidden = true;
+    });
+    tab.classList.add('is-active');
+    tab.setAttribute('aria-selected', 'true');
+    target.classList.add('is-active');
+    target.hidden = false;
+  });
+});
