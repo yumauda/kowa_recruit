@@ -1,0 +1,102 @@
+@use "../global" as *;
+
+.p-work-strength {
+  padding-top: rem(40);
+  padding-bottom: rem(40);
+  background-color: #f2f1ee;
+
+  @include mq("md") {
+    padding-top: rem(130);
+    padding-bottom: rem(126);
+  }
+}
+
+.p-work-strength__heading {
+  text-align: center;
+}
+
+.p-work-strength__heading h2 {
+  color: #444;
+  font-size: rem(30);
+  font-weight: 100;
+  letter-spacing: 0.04em;
+
+  @include mq("md") {
+    font-size: rem(50);
+  }
+}
+
+.p-work-strength__heading p {
+  margin-top: rem(28);
+  color: #666;
+  font-size: rem(15);
+  font-weight: 100;
+  line-height: 2;
+
+  @include mq("md") {
+    font-size: rem(18);
+  }
+}
+
+.p-work-strength__pair {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: rem(48);
+  text-align: center;
+
+  @include mq("md") {
+    flex-direction: row;
+    justify-content: center;
+    column-gap: rem(86);
+    margin-top: rem(62);
+  }
+}
+
+.p-work-strength__pair > div {
+  width: 100%;
+
+  @include mq("md") {
+    width: rem(300);
+  }
+}
+
+.p-work-strength__pair strong {
+  color: #ed0015;
+  font-size: rem(50);
+  font-weight: 100;
+
+  @include mq("md") {
+    font-size: rem(70);
+  }
+}
+
+.p-work-strength__pair p {
+  margin-top: rem(10);
+  color: #777;
+  font-size: rem(15);
+  font-weight: 100;
+  line-height: 1.7;
+}
+
+.p-work-strength__pair > span {
+  position: relative;
+  width: rem(58);
+  height: rem(58);
+  margin-top: rem(24);
+  margin-bottom: rem(24);
+}
+
+.p-work-strength__pair > span::before,
+.p-work-strength__pair > span::after {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #888;
+  content: "";
+}
+
+.p-work-strength__pair > span::before { transform: rotate(45deg); }
+.p-work-strength__pair > span::after { transform: rotate(-45deg); }

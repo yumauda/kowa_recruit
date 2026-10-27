@@ -1,0 +1,74 @@
+@use "../global" as *;
+
+.p-work-related {
+  padding-top: rem(40);
+  padding-bottom: rem(88);
+  background-color: #fff;
+
+  @include mq("md") {
+    padding-top: rem(108);
+    padding-bottom: rem(112);
+  }
+}
+
+.p-work-related h2 {
+  color: #555;
+  font-size: rem(27);
+  font-weight: 100;
+  text-align: center;
+}
+
+.p-work-related h2::after {
+  display: block;
+  width: rem(40);
+  height: rem(3);
+  margin-top: rem(10);
+  margin-right: auto;
+  margin-left: auto;
+  background-color: #ed0015;
+  content: "";
+}
+
+.p-work-related__layout {
+  margin-top: rem(50);
+
+  @include mq("md") {
+    display: flex;
+    align-items: center;
+    column-gap: rem(100);
+    margin-top: rem(60);
+    padding-right: rem(60);
+    padding-left: rem(60);
+  }
+}
+
+.p-work-related__layout figure {
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+
+  @include mq("md") { flex: 0 0 rem(500); }
+}
+
+.p-work-related__layout > div { flex: 1; }
+
+.p-work-related__layout h3 {
+  margin-top: rem(42);
+  color: #444;
+  font-size: rem(30);
+  font-weight: 100;
+  line-height: 1.45;
+
+  @include mq("md") { margin-top: 0; font-size: rem(46); letter-spacing: -0.04em; line-height: 1.25; }
+}
+
+.p-work-related__layout p {
+  margin-top: rem(28);
+  color: #666;
+  font-size: rem(15);
+  font-weight: 100;
+  line-height: 2;
+
+  @include mq("md") { font-size: rem(18); }
+}
+
+.p-work-related .c-link-button { margin-top: rem(34); }
