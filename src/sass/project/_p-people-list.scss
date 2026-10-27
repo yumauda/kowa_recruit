@@ -1,0 +1,102 @@
+@use "../global" as *;
+
+.p-people-list {
+  padding-top: rem(76);
+  padding-bottom: rem(86);
+  background: linear-gradient(to bottom, #f2f1ee 0, #f2f1ee rem(620), #fff rem(620), #fff 100%);
+
+  @include mq("md") {
+    padding-top: rem(130);
+    padding-bottom: rem(130);
+    background: linear-gradient(to bottom, #f2f1ee 0, #f2f1ee rem(620), #fff rem(620), #fff 100%);
+  }
+}
+
+.p-people-list__heading { text-align: center; }
+
+.p-people-list__heading h2 {
+  color: #444;
+  font-size: rem(30);
+  font-weight: 100;
+  letter-spacing: 0.04em;
+  line-height: 1.5;
+
+  @include mq("md") { font-size: rem(50); line-height: 1.35; }
+}
+
+.p-people-list__heading p {
+  margin-top: rem(24);
+  color: #777;
+  font-size: rem(15);
+  font-weight: 100;
+  line-height: 2;
+
+  @include mq("md") { font-size: rem(18); }
+}
+
+.p-people-list__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: rem(18);
+  row-gap: rem(50);
+  margin-top: rem(54);
+
+  @include mq("md") {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    column-gap: rem(60);
+    row-gap: rem(70);
+    margin-top: rem(76);
+  }
+}
+
+.p-people-list__grid figure {
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  border-top-left-radius: rem(34);
+  border-bottom-right-radius: rem(34);
+}
+
+.p-people-list__grid img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.p-people-list__tag {
+  display: inline-block;
+  min-width: rem(110);
+  margin-top: rem(16);
+  padding-top: rem(4);
+  padding-right: rem(12);
+  padding-bottom: rem(4);
+  padding-left: rem(12);
+  background-color: #ed0015;
+  color: #fff;
+  font-size: rem(12);
+  font-weight: 100;
+  text-align: center;
+
+  @include mq("md") { min-width: rem(160); font-size: rem(15); }
+}
+
+.p-people-list__tag--sales { background-color: #0788ce; }
+
+.p-people-list__grid h3 {
+  margin-top: rem(14);
+  color: #555;
+  font-size: rem(16);
+  font-weight: 100;
+  line-height: 1.7;
+
+  @include mq("md") { font-size: rem(24); }
+}
+
+.p-people-list__grid article > a > p {
+  margin-top: rem(8);
+  color: #999;
+  font-size: rem(12);
+  font-weight: 100;
+
+  @include mq("md") { font-size: rem(16); }
+}

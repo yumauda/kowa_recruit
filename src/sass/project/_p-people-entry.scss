@@ -1,0 +1,51 @@
+@use "../global" as *;
+
+.p-people-entry {
+  padding-top: rem(78);
+  padding-bottom: rem(90);
+  background-color: #f2f1ee;
+  text-align: center;
+
+  @include mq("md") {
+    padding-top: rem(118);
+    padding-bottom: rem(126);
+  }
+}
+
+.p-people-entry h2 {
+  color: #444;
+  font-size: rem(30);
+  font-weight: 100;
+
+  @include mq("md") { font-size: rem(50); }
+}
+
+.p-people-entry p {
+  margin-top: rem(28);
+  color: #777;
+  font-size: rem(15);
+  font-weight: 100;
+  line-height: 2;
+
+  @include mq("md") { font-size: rem(18); }
+}
+
+.p-people-entry .l-inner > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: rem(18);
+  margin-top: rem(40);
+
+  @include mq("md") {
+    flex-direction: row;
+    justify-content: center;
+    column-gap: rem(40);
+  }
+}
+
+.p-people-entry .c-link-button { margin-right: auto; margin-left: auto; }
+
+@include mq("md") {
+  .p-people-entry .c-link-button { margin-right: 0; margin-left: 0; }
+}
