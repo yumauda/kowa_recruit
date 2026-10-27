@@ -18,8 +18,9 @@ $padding-sp: 15px;
 // フォント設定
 ////////////////////
 
-$base-font-family: "M PLUS 1p", sans-serif;
+$base-font-family: "Noto Sans JP", sans-serif;
 $second-font-family: "Open Sans", sans-serif;
+$number-font-family: "Oswald", $base-font-family;
 // ※検証ツールでしっかり反映されているか確認する
 
 body {
@@ -94,4 +95,8 @@ $mediaquerys: (
   @include mq("md") {
     display: none;
   }
+}
+
+.u-number.u-number {
+  font-family: $number-font-family;
 }
