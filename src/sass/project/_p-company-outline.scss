@@ -5,8 +5,7 @@
   background-color: #fff;
 
   @include mq("md") {
-    padding-top: rem(110);
-    padding-bottom: rem(110);
+    padding-top: 0;
   }
 }
 
@@ -19,6 +18,7 @@
 
 .p-company-outline__content {
   @include mq("md") {
+    flex-shrink: 0;
     width: 50%;
     padding-right: rem(50);
   }
@@ -75,7 +75,8 @@
   overflow: hidden;
 
   @include mq("md") {
-    width: 50%;
+    flex-shrink: 0;
+    width: calc(50% + (100vw - 100%) / 2);
     margin-top: 0;
   }
 }
