@@ -11,11 +11,86 @@
 .p-interview-hero__copy h1 { margin-top:rem(16); color:#444; font-size:rem(34); font-weight:100; line-height:1.55; }
 .p-interview-hero__copy p { margin-top:rem(14); color:#777; font-size:rem(15); }
 
-.p-interview-story { padding-top:rem(76); padding-bottom:rem(76); }
-.p-interview-story article { display:flex; flex-direction:column-reverse; row-gap:rem(28); }
-.p-interview-story article + article { margin-top:rem(76); }
-.p-interview-story h2 { padding-left:rem(16); border-left:3px solid #ed0015; color:#555; font-size:rem(27); font-weight:100; line-height:1.5; }
+.p-interview-story {
+  overflow: hidden;
+  background-color: #f2f1ee;
+}
+
+.p-interview-story article {
+  position: relative;
+  z-index: 0;
+  display: flex;
+  flex-direction: column-reverse;
+  row-gap: rem(28);
+  padding-top: rem(76);
+  padding-bottom: rem(76);
+
+  @include mq("md") {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: center;
+    column-gap: rem(80);
+    padding-top: rem(120);
+    padding-bottom: rem(120);
+  }
+}
+
+// 全幅の背景帯だけを重ね、本文と画像は通常フローに保つ。
+.p-interview-story article::before {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  left: calc(50% - 50vw);
+  width: 100vw;
+  background-color: #fff;
+  content: "";
+}
+
+.p-interview-story article:first-child::before {
+  border-bottom-right-radius: rem(60);
+
+  @include mq("md") {
+    border-bottom-right-radius: rem(150);
+  }
+}
+
+.p-interview-story article:nth-child(2)::before {
+  background-color: #f2f1ee;
+}
+
+.p-interview-story article:last-child::before {
+  border-top-left-radius: rem(60);
+
+  @include mq("md") {
+    border-top-left-radius: rem(150);
+  }
+}
+
+.p-interview-story article:nth-child(even) div {
+  @include mq("md") {
+    order: 2;
+  }
+}
+
+.p-interview-story h2 {
+  padding-left: rem(16);
+  border-left: 3px solid #ed0015;
+  color: #555;
+  font-size: rem(27);
+  font-weight: 100;
+  line-height: 1.5;
+
+  @include mq("md") {
+    font-size: rem(36);
+  }
+}
 .p-interview-story p,.p-interview-message p { margin-top:rem(24); color:#777; font-size:rem(15); font-weight:100; line-height:2; }
+.p-interview-story p {
+  @include mq("md") {
+    font-size: rem(17);
+  }
+}
 .p-interview-story figure { aspect-ratio:4/3; overflow:hidden; }
 
 .p-interview-day { background:#f2f1ee; }
@@ -44,12 +119,7 @@
   .p-interview-hero .l-inner { padding-top:rem(102); }
   .p-interview-hero__copy { margin-top:rem(95); }
   .p-interview-hero__copy h1 { font-size:rem(50); }
-  .p-interview-story { padding-top:rem(140); padding-bottom:rem(120); }
-  .p-interview-story article { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); align-items:center; column-gap:rem(80); }
-  .p-interview-story article:nth-child(even) div { order:2; }
-  .p-interview-story article + article { margin-top:rem(120); }
-  .p-interview-story h2 { font-size:rem(36); }
-  .p-interview-story p,.p-interview-message p { font-size:rem(17); }
+  .p-interview-message p { font-size:rem(17); }
   .p-interview-day h2 { padding-right:rem(70); padding-left:max(calc((100vw - rem(1200))/2),rem(30)); font-size:rem(34); }
   .p-interview-day__layout { display:flex; align-items:center; column-gap:rem(70); padding-top:rem(60); padding-bottom:rem(70); }
   .p-interview-day li { grid-template-columns:rem(75) 1fr; font-size:rem(16); }
