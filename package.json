@@ -12,8 +12,9 @@
     "dev:images": "chokidar \"src/images/**/*\" -c \"npm run compress:images\"",
     "compress:images": "node scripts/compress-images.js",
     "generate:styles": "node scripts/generate-styles.js",
-    "build": "vite build",
-    "preview": "vite preview"
+    "prepare:upload": "npm run compress:images && npm run generate:styles",
+    "build": "npm run prepare:upload",
+    "preview": "vite"
   },
   "author": "",
   "license": "ISC",

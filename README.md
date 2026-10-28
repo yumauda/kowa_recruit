@@ -1,27 +1,24 @@
-# 【DartSass】タンクGulp環境（スマホファースト）
+# 恒和工業 採用サイト
 
-## 環境
-- Gulpが使える環境が前提（4系）
-- Nodeはバージョン14以降
+## 開発
 
-## 使い方
-- ダウンロードしたフォルダを開く
-- ターミナルを開き、 npm i とコマンドを入力
-- node_modulesとpackage-lock.jsonが生成されるのを確認する
-- 開発時は `npm run dev` を実行
+- 初回のみ `npm install` を実行します。
+- 開発時は `npm run dev` を実行します。
+- Sassは `src/sass/`、画像原本は `src/images/`、JavaScriptは `js/`で管理します。
+- CSSは `css/`、圧縮画像は `images/`へ直接出力されます。
 
-## 仕様
-- sassの記述はsrcフォルダの中で行う
-- 画像は `src/images/common/` などに格納する（自動で圧縮されます）
-- 圧縮された画像は第一階層の `images/`（`js/` や `scripts/` と同階層）に出力されます
-- すでに出力済みで更新されていない画像は、再圧縮しません（差分だけ処理します）
-- jsに関する記述は第一階層のjsフォルダの中で行ってください。特に圧縮等は行っていません。
+## アップロード
 
-## 備考
-- スマホファーストが前提の仕様です。
-- rem記述を前提としています。
-- ルートフォントをvwで設定していることからPCサイズのレイアウトをタブレットで表示させることが出来ます（remで書いた場合のみ）。
-# tankenvironment
-# tank_viteEnvironment
-# hako_scan
-# tank_viteEnvironment
+この案件では`dist/`を使用しません。公開時はプロジェクト直下の次のファイルとフォルダを、そのままサーバーへアップロードします。
+
+- `index.html`
+- `company/`、`works/`、`people/`、`interview/`、`career/`、`environment/`、`recruit/`
+- `css/`
+- `images/`
+- `js/`
+- `fonts/`
+- `mail.php`
+
+アップロード前に`npm run prepare:upload`を実行すると、画像とCSSの公開ファイルが更新されます。`npm run build`も同じ処理を実行し、`dist/`は生成しません。
+
+`node_modules/`、`src/`、`scripts/`、`package.json`、`package-lock.json`、`vite.config.js`はアップロードしません。
