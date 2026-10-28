@@ -95,11 +95,37 @@
 
 .p-interview-day { background:#f2f1ee; }
 .p-interview-day h2 { display:inline-block; margin-left:calc(50% - 50vw); padding:rem(14) rem(28); background:#ed0015; color:#fff; font-size:rem(26); font-weight:100; }
-.p-interview-day__layout { padding-top:rem(44); padding-bottom:rem(54); }
+.p-interview-day__layout {
+  padding-top:rem(44);
+  padding-bottom:rem(54);
+
+  @include mq("md") {
+    --right-bleed: max(calc((100vw - 1250px) / 2 + 25px), 25px);
+    display:flex;
+    width:calc(100% + var(--right-bleed));
+    align-items:center;
+    column-gap:rem(70);
+    padding-top:rem(60);
+    padding-bottom:rem(70);
+  }
+}
 .p-interview-day ol { flex:1; }
 .p-interview-day li { display:grid; grid-template-columns:rem(65) 1fr; column-gap:rem(14); padding-bottom:rem(16); color:#777; font-size:rem(14); }
 .p-interview-day time { color:#ed0015; font-family:$second-font-family; font-size:rem(18); font-weight:700; }
-.p-interview-day figure { aspect-ratio:1; margin-top:rem(30); overflow:hidden; border-top-left-radius:rem(60); border-bottom-left-radius:rem(60); }
+.p-interview-day figure {
+  aspect-ratio:1;
+  margin-top:rem(30);
+  overflow:hidden;
+  border-top-left-radius:rem(60);
+  border-bottom-left-radius:rem(60);
+
+  @include mq("md") {
+    flex-basis:calc((100% - var(--right-bleed)) / 2 + var(--right-bleed));
+    flex-grow:0;
+    flex-shrink:0;
+    margin-top:0;
+  }
+}
 
 .p-interview-message { padding-top:rem(76); padding-bottom:rem(76); }
 .p-interview-message .l-inner { border-top:1px solid #777; border-bottom:1px solid #777; padding-top:rem(36); padding-bottom:rem(36); }
@@ -121,9 +147,7 @@
   .p-interview-hero__copy h1 { font-size:rem(50); }
   .p-interview-message p { font-size:rem(17); }
   .p-interview-day h2 { padding-right:rem(70); padding-left:max(calc((100vw - rem(1200))/2),rem(30)); font-size:rem(34); }
-  .p-interview-day__layout { display:flex; align-items:center; column-gap:rem(70); padding-top:rem(60); padding-bottom:rem(70); }
   .p-interview-day li { grid-template-columns:rem(75) 1fr; font-size:rem(16); }
-  .p-interview-day figure { flex:0 0 50%; margin-top:0; }
   .p-interview-message { padding-top:rem(120); padding-bottom:rem(120); }
   .p-interview-message .l-inner { display:grid; grid-template-columns:rem(260) 1fr; align-items:center; column-gap:rem(60); }
   .p-interview-message h2 { font-size:rem(24); }
