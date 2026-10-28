@@ -167,6 +167,20 @@
 
 .p-work-role__steps article:last-child { border-right: 0; }
 
+.p-work-role--engineer .p-work-role__steps article {
+  @include mq("md") {
+    border-right-color: #fff;
+    background-color: #f2f1ee;
+  }
+}
+
+.p-work-role--sales .p-work-role__steps article {
+  @include mq("md") {
+    border-right-color: #f2f1ee;
+    background-color: #fff;
+  }
+}
+
 .p-work-role__steps figure {
   aspect-ratio: 4 / 3;
   overflow: hidden;
