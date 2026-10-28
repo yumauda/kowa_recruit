@@ -1,11 +1,67 @@
 @use "../global" as *;
 
-.p-environment-intro { padding-top:rem(76); padding-bottom:rem(80); background:#f2f1ee; }
-.p-environment-intro h2 { color:#444; font-size:rem(30); font-weight:100; line-height:1.5; }
-.p-environment-intro p { margin-top:rem(28); color:#666; font-size:rem(15); line-height:2; }
-.p-environment-intro__cycle { display:flex; align-items:center; justify-content:center; column-gap:rem(20); aspect-ratio:2/1; max-width:rem(420); margin:rem(40) auto 0; border:rem(10) solid #ed0015; border-radius:50%; color:#ed0015; }
-.p-environment-intro__cycle strong { font-family:$second-font-family; font-size:rem(30); }
-.p-environment-intro__cycle span { font-size:rem(34); }
+.p-environment-intro {
+  padding-top: rem(76);
+  padding-bottom: rem(80);
+  background: #f2f1ee;
+
+  @include mq("md") {
+    padding-top: rem(120);
+    padding-bottom: rem(110);
+  }
+}
+.p-environment-intro__layout {
+  @include mq("md") {
+    display: flex;
+    align-items: center;
+  }
+}
+.p-environment-intro__content {
+  @include mq("md") {
+    flex: 1;
+  }
+}
+.p-environment-intro h2 {
+  color: #444;
+  font-size: clamp(24px, 7.692vw, 30px);
+  font-weight: 100;
+  line-height: 1.5;
+
+  @include mq("md") {
+    font-size: rem(50);
+  }
+}
+.p-environment-intro p {
+  margin-top: rem(28);
+  color: #666;
+  font-size: rem(15);
+  line-height: 2;
+
+  @include mq("md") {
+    font-size: rem(18);
+  }
+}
+.p-environment-intro__cycle {
+  aspect-ratio: 876 / 554;
+  width: 100%;
+  max-width: rem(438);
+  margin-top: rem(40);
+  margin-right: auto;
+  margin-left: auto;
+
+  @include mq("md") {
+    flex: none;
+    width: min(30.417vw, rem(438));
+    margin-top: 0;
+    margin-left: rem(90);
+  }
+}
+.p-environment-intro__cycle img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
 
 .p-environment-benefits { padding-top:rem(78); padding-bottom:rem(86); }
 .p-environment-benefits h2,.p-environment-offices h2,.p-environment-faq h2 { color:#555; font-size:rem(30); font-weight:100; text-align:center; }
@@ -38,11 +94,6 @@
 .p-environment-entry .l-inner > div { display:flex; flex-direction:column; align-items:center; row-gap:rem(18); margin-top:rem(40); }
 
 @include mq("md") {
-  .p-environment-intro { padding-top:rem(120); padding-bottom:rem(110); }
-  .p-environment-intro .l-inner { display:grid; grid-template-columns:2fr 1fr; align-items:center; column-gap:rem(90); }
-  .p-environment-intro h2 { font-size:rem(50); }
-  .p-environment-intro p { font-size:rem(18); }
-  .p-environment-intro__cycle { margin-top:0; }
   .p-environment-benefits { padding-top:rem(110); padding-bottom:rem(120); }
   .p-environment-benefits h2,.p-environment-offices h2,.p-environment-faq h2 { font-size:rem(46); }
   .p-environment-benefits__grid { grid-template-columns:repeat(3,minmax(0,1fr)); gap:rem(40) rem(60); }
