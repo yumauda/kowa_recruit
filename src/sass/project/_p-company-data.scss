@@ -64,7 +64,26 @@
   padding-bottom: rem(28);
   padding-left: rem(12);
   border-top: 1px solid #c9c9c9;
+  border-left: 1px solid #b2b4b5;
   text-align: center;
+}
+
+.p-company-data__list article:nth-child(2n) {
+  border-right: 1px solid #b2b4b5;
+
+  @include mq("md") {
+    border-right: 0;
+  }
+}
+
+.p-company-data__list article:nth-child(3n) {
+  @include mq("md") {
+    border-right: 1px solid #b2b4b5;
+  }
+}
+
+.p-company-data__list article:last-child {
+  border-right: 1px solid #b2b4b5;
 }
 
 .p-company-data__list h3 {
