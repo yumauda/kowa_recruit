@@ -35,10 +35,8 @@
   @include mq("md") {
     display: flex;
     align-items: center;
-    column-gap: rem(100);
+    column-gap: clamp(rem(40), 6.944vw, rem(100));
     margin-top: rem(60);
-    padding-right: rem(60);
-    padding-left: rem(60);
   }
 }
 
@@ -46,19 +44,32 @@
   aspect-ratio: 4 / 3;
   overflow: hidden;
 
-  @include mq("md") { flex: 0 0 rem(500); }
+  @include mq("md") {
+    flex-basis: 41.667%;
+    flex-grow: 0;
+    flex-shrink: 1;
+  }
 }
 
-.p-work-related__layout > div { flex: 1; }
+.p-work-related__layout > div {
+  min-width: 0;
+  flex: 1;
+}
 
 .p-work-related__layout h3 {
   margin-top: rem(42);
   color: #444;
-  font-size: rem(30);
+  font-size: clamp(rem(26), 7.69vw, rem(30));
   font-weight: 100;
   line-height: 1.45;
+  white-space: nowrap;
 
-  @include mq("md") { margin-top: 0; font-size: rem(46); letter-spacing: -0.04em; line-height: 1.25; }
+  @include mq("md") {
+    margin-top: 0;
+    font-size: clamp(rem(30), 3.194vw, rem(46));
+    letter-spacing: -0.04em;
+    line-height: 1.25;
+  }
 }
 
 .p-work-related__layout p {
