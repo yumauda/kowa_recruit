@@ -102,37 +102,125 @@
 }
 .p-interview-story figure { aspect-ratio:4/3; overflow:hidden; }
 
-.p-interview-day { background:#f2f1ee; }
-.p-interview-day h2 { display:inline-block; margin-left:calc(50% - 50vw); padding:rem(14) rem(28); background:#ed0015; color:#fff; font-size:rem(26); font-weight:100; }
+.p-interview-day {
+  background: #f2f1ee;
+}
+.p-interview-day h2 {
+  display: inline-block;
+  margin-left: calc(50% - 50vw);
+  padding-top: rem(14);
+  padding-right: rem(28);
+  padding-bottom: rem(14);
+  padding-left: rem(28);
+  background: #ed0015;
+  color: #fff;
+  font-size: rem(26);
+  font-weight: 100;
+
+  @include mq("md") {
+    padding-top: rem(11);
+    padding-right: rem(52);
+    padding-bottom: rem(11);
+    padding-left: max(calc((100vw - rem(1200)) / 2), rem(30));
+    font-size: rem(36);
+    line-height: rem(48);
+  }
+}
 .p-interview-day__layout {
-  padding-top:rem(44);
-  padding-bottom:rem(54);
+  padding-top: rem(44);
+  padding-bottom: rem(54);
 
   @include mq("md") {
     --right-bleed: max(calc((100vw - 1250px) / 2 + 25px), 25px);
-    display:flex;
-    width:calc(100% + var(--right-bleed));
-    align-items:center;
-    column-gap:rem(70);
-    padding-top:rem(60);
-    padding-bottom:rem(70);
+    display: flex;
+    width: calc(100% + var(--right-bleed));
+    align-items: flex-start;
+    column-gap: rem(70);
+    padding-top: rem(57);
+    padding-bottom: 0;
   }
 }
-.p-interview-day ol { flex:1; }
-.p-interview-day li { display:grid; grid-template-columns:rem(65) 1fr; column-gap:rem(14); padding-bottom:rem(16); color:#777; font-size:rem(14); }
-.p-interview-day time { color:#ed0015; font-family:$second-font-family; font-size:rem(18); font-weight:700; }
-.p-interview-day figure {
-  aspect-ratio:1;
-  margin-top:rem(30);
-  overflow:hidden;
-  border-top-left-radius:rem(60);
-  border-bottom-left-radius:rem(60);
+.p-interview-day ol {
+  flex: 1;
+}
+.p-interview-day li {
+  position: relative;
+  display: grid;
+  grid-template-columns: rem(65) 1fr;
+  column-gap: rem(14);
+  padding-bottom: rem(16);
+  padding-left: rem(24);
+  color: #333;
+  font-size: rem(14);
+  font-weight: 100;
+  letter-spacing: 0.05em;
+  line-height: 1.8;
+
+  &::before {
+    position: absolute;
+    z-index: 1;
+    top: rem(7);
+    left: 0;
+    width: rem(14);
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: #e50012;
+    content: "";
+  }
+
+  &:not(:last-child)::after {
+    position: absolute;
+    top: rem(14);
+    bottom: rem(-14);
+    left: rem(6);
+    width: rem(2);
+    background: #e50012;
+    content: "";
+  }
 
   @include mq("md") {
-    flex-basis:calc((100% - var(--right-bleed)) / 2 + var(--right-bleed));
-    flex-grow:0;
-    flex-shrink:0;
-    margin-top:0;
+    grid-template-columns: rem(84) 1fr;
+    column-gap: 0;
+    padding-top: rem(14);
+    padding-bottom: rem(14);
+    padding-left: rem(34);
+    font-size: rem(18);
+    letter-spacing: 0.02em;
+    line-height: rem(32);
+
+    &::before {
+      top: rem(23);
+    }
+
+    &:not(:last-child)::after {
+      top: rem(30);
+      bottom: rem(-30);
+    }
+  }
+}
+.p-interview-day time {
+  color: #e50012;
+  font-family: $second-font-family;
+  font-size: rem(18);
+  font-weight: 500;
+  letter-spacing: 0;
+
+  @include mq("md") {
+    font-size: rem(26);
+  }
+}
+.p-interview-day figure {
+  aspect-ratio: 720 / 709;
+  margin-top: rem(30);
+  overflow: hidden;
+  border-top-left-radius: rem(60);
+  border-bottom-left-radius: rem(60);
+
+  @include mq("md") {
+    flex-basis: calc((100% - var(--right-bleed)) / 2 + var(--right-bleed));
+    flex-grow: 0;
+    flex-shrink: 0;
+    margin-top: rem(28);
   }
 }
 
@@ -328,8 +416,6 @@
   .p-interview-hero__copy { margin-top:rem(95); }
   .p-interview-hero__copy h1 { font-size:rem(50); }
   .p-interview-message p { font-size:rem(17); }
-  .p-interview-day h2 { padding-right:rem(70); padding-left:max(calc((100vw - rem(1200))/2),rem(30)); font-size:rem(34); }
-  .p-interview-day li { grid-template-columns:rem(75) 1fr; font-size:rem(16); }
   .p-interview-message { padding-top:rem(120); padding-bottom:rem(120); }
   .p-interview-message .l-inner { display:grid; grid-template-columns:rem(260) 1fr; align-items:center; column-gap:rem(60); }
   .p-interview-message h2 { font-size:rem(24); }
