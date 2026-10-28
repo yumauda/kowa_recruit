@@ -1,15 +1,16 @@
 import { defineConfig } from 'vite';
 import { resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
-import { readdirSync } from 'fs';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
-const htmlEntries = Object.fromEntries(
-  readdirSync(__dirname)
-    .filter((file) => file.endsWith('.html'))
-    .map((file) => [file.replace(/\.html$/, ''), resolve(__dirname, file)])
-);
+const pageNames = ['company', 'works', 'people', 'interview', 'career', 'environment', 'recruit'];
+const htmlEntries = {
+  index: resolve(__dirname, 'index.html'),
+  ...Object.fromEntries(
+    pageNames.map((pageName) => [`${pageName}/index`, resolve(__dirname, pageName, 'index.html')])
+  )
+};
 
 export default defineConfig({
   plugins: [],
