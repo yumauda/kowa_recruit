@@ -85,7 +85,10 @@
 .p-career-plan__panel { padding-top:rem(40); }
 .p-career-plan__lead { max-width:rem(600); margin-right:auto; margin-left:auto; color:#666; font-size:rem(15); line-height:2; }
 .p-career-plan__panel article { margin-top:rem(58); text-align:center; }
-.p-career-plan__panel article > p { color:#ed0015; font-size:rem(16); }
+.p-career-plan__panel article > p {
+  color: #ed0015;
+  font-size: clamp(20px, 1.806vw, 26px);
+}
 .p-career-plan__panel h3 { margin-top:rem(10); color:#555; font-size:rem(25); font-weight:100; }
 .p-career-plan__panel article > div { margin-top:rem(26); padding:rem(22); border-radius:rem(20); background:#fff; text-align:left; }
 .p-career-plan__panel figure { aspect-ratio:4/3; overflow:hidden; }
