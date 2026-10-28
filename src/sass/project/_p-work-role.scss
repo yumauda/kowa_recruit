@@ -28,6 +28,13 @@
   }
 }
 
+.p-work-role--sales .p-work-role__hero {
+  @include mq("md") {
+    width: calc(100% + (100vw - 100%) / 2);
+    margin-left: calc((100% - 100vw) / 2);
+  }
+}
+
 .p-work-role__hero img,
 .p-work-role__steps img,
 .p-work-related img {
