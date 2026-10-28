@@ -53,6 +53,7 @@
   margin-top: rem(50);
 
   @include mq("md") {
+    width: calc(100% + (100vw - 100%) / 2);
     grid-template-columns: repeat(3, minmax(0, 1fr));
     margin-top: rem(68);
   }
