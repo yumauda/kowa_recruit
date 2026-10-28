@@ -1,10 +1,20 @@
 import Swiper from 'swiper/bundle';
 
-const interviewSwiperElement = document.querySelector('.js-interview-swiper');
+const initializeInterviewSwiper = ({
+  selector,
+  previousButtonSelector,
+  nextButtonSelector,
+  containerMessage,
+  mobileSpaceBetween,
+  desktopSpaceBetween,
+}) => {
+  const interviewSwiperElement = document.querySelector(selector);
 
-if (interviewSwiperElement) {
-  const previousButtons = document.querySelectorAll('.js-interview-prev');
-  const nextButtons = document.querySelectorAll('.js-interview-next');
+  if (!interviewSwiperElement) return;
+
+  const sliderSection = interviewSwiperElement.closest('section') ?? document;
+  const previousButtons = sliderSection.querySelectorAll(previousButtonSelector);
+  const nextButtons = sliderSection.querySelectorAll(nextButtonSelector);
   const interviewWrapper = interviewSwiperElement.querySelector('.swiper-wrapper');
   const sourceSlides = interviewWrapper.querySelectorAll('.swiper-slide');
 
@@ -18,7 +28,7 @@ if (interviewSwiperElement) {
   const interviewSwiper = new Swiper(interviewSwiperElement, {
     a11y: {
       enabled: true,
-      containerMessage: '先輩社員インタビュー一覧',
+      containerMessage,
       slideLabelMessage: '{{index}} / {{slidesLength}}',
     },
     keyboard: {
@@ -26,7 +36,7 @@ if (interviewSwiperElement) {
       onlyInViewport: true,
     },
     slidesPerView: 2,
-    spaceBetween: 12,
+    spaceBetween: mobileSpaceBetween,
     speed: 600,
     loop: true,
     watchSlidesProgress: true,
@@ -34,7 +44,7 @@ if (interviewSwiperElement) {
     breakpoints: {
       768: {
         slidesPerView: 3,
-        spaceBetween: 60,
+        spaceBetween: desktopSpaceBetween,
       },
     },
   });
@@ -52,7 +62,10 @@ if (interviewSwiperElement) {
     interviewSwiper.slides.forEach((slide) => {
       const isVisible = slide.classList.contains('swiper-slide-visible');
       slide.setAttribute('aria-hidden', String(!isVisible));
-      slide.tabIndex = isVisible ? 0 : -1;
+
+      if (slide.matches('a, button')) {
+        slide.tabIndex = isVisible ? 0 : -1;
+      }
     });
   };
 
@@ -66,4 +79,22 @@ if (interviewSwiperElement) {
   interviewSwiper.on('slideChange transitionEnd update resize breakpoint', updateInterviewAccessibility);
   updateInterviewNavigation();
   updateInterviewAccessibility();
-}
+};
+
+initializeInterviewSwiper({
+  selector: '.js-interview-swiper',
+  previousButtonSelector: '.js-interview-prev',
+  nextButtonSelector: '.js-interview-next',
+  containerMessage: '先輩社員インタビュー一覧',
+  mobileSpaceBetween: 12,
+  desktopSpaceBetween: 60,
+});
+
+initializeInterviewSwiper({
+  selector: '.js-more-interview-swiper',
+  previousButtonSelector: '.js-more-interview-prev',
+  nextButtonSelector: '.js-more-interview-next',
+  containerMessage: '他のインタビュー一覧',
+  mobileSpaceBetween: 18,
+  desktopSpaceBetween: 70,
+});

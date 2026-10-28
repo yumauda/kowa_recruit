@@ -16,7 +16,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;800;900&amp;family=Oswald:wght@200;300;400;500;600;700&amp;display=swap">
+    <link rel="stylesheet" href="./css/swiper-bundle.min.css">
     <link rel="stylesheet" href="./css/styles.css">
+    <script type="module" src="./js/swiper.js">
+    </script>
     <script type="module" src="./js/script.js">
     </script>
   </head>
@@ -237,45 +240,83 @@
       </section>
       <section class="p-interview-more" aria-labelledby="more-title">
         <div class="l-inner">
-          <p>More Interviews</p>
-          <h2 id="more-title">他のインタビューを見る</h2>
-          <div class="p-interview-more__grid">
-            <article>
-              <figure>
-                <img src="./images/common/people-02.webp" alt="技術グループ U.A" width="720" height="960" loading="lazy" decoding="async">
-              </figure>
-              <span>技術グループ</span>
-              <h3>
-                考えたものを形にし、試して、
-                <br>
-                さらに磨いていく。
-              </h3>
-              <small>U.A（<span class="u-number">2014</span>年入社）</small>
-            </article>
-            <article>
-              <figure>
-                <img src="./images/common/people-03.webp" alt="技術グループ Y.Y" width="720" height="960" loading="lazy" decoding="async">
-              </figure>
-              <span>技術グループ</span>
-              <h3>
-                試験条件を整え、性能試験の
-                <br>
-                結果で製品の信頼を示す。
-              </h3>
-              <small>Y.Y（<span class="u-number">2023</span>年入社）</small>
-            </article>
-            <article>
-              <figure>
-                <img src="./images/common/people-04.webp" alt="技術グループ S.H" width="720" height="960" loading="lazy" decoding="async">
-              </figure>
-              <span>技術グループ</span>
-              <h3>
-                設計に携わる責任と面白さを、
-                <br>
-                次の世代へつなぐ。
-              </h3>
-              <small>S.H（<span class="u-number">2004</span>年入社）</small>
-            </article>
+          <div class="p-interview-more__heading-layout">
+            <div class="p-interview-more__heading">
+              <p class="p-interview-more__label">More Interviews</p>
+              <h2 class="p-interview-more__title" id="more-title">他のインタビューを見る</h2>
+            </div>
+            <div
+              class="p-interview-more__navigation p-interview-more__navigation--pc"
+              role="group"
+              aria-label="他のインタビュースライダー操作"
+            >
+              <button
+                class="p-interview-more__button p-interview-more__button--prev js-more-interview-prev"
+                type="button"
+                aria-label="前のインタビューを表示"
+              >
+              </button>
+              <button
+                class="p-interview-more__button p-interview-more__button--next js-more-interview-next"
+                type="button"
+                aria-label="次のインタビューを表示"
+              >
+              </button>
+            </div>
+          </div>
+          <div class="p-interview-more__slider-layout">
+            <button
+              class="p-interview-more__button p-interview-more__button--prev p-interview-more__button--sp js-more-interview-prev"
+              type="button"
+              aria-label="前のインタビューを表示"
+            >
+            </button>
+            <div class="p-interview-more__slider swiper js-more-interview-swiper">
+              <div class="p-interview-more__list swiper-wrapper">
+                <article class="p-interview-more__card swiper-slide">
+                  <figure class="p-interview-more__image">
+                    <img src="./images/common/people-02.webp" alt="技術グループ U.A" width="720" height="960" loading="lazy" decoding="async">
+                  </figure>
+                  <p class="p-interview-more__group">技術グループ</p>
+                  <h3 class="p-interview-more__copy">
+                    考えたものを形にし、試して、
+                    <br>
+                    さらに磨いていく。
+                  </h3>
+                  <p class="p-interview-more__name">U.A（<span class="u-number">2014</span>年入社）</p>
+                </article>
+                <article class="p-interview-more__card swiper-slide">
+                  <figure class="p-interview-more__image">
+                    <img src="./images/common/people-03.webp" alt="技術グループ Y.Y" width="720" height="960" loading="lazy" decoding="async">
+                  </figure>
+                  <p class="p-interview-more__group">技術グループ</p>
+                  <h3 class="p-interview-more__copy">
+                    試験条件を整え、性能試験の
+                    <br>
+                    結果で製品の信頼を示す。
+                  </h3>
+                  <p class="p-interview-more__name">Y.Y（<span class="u-number">2023</span>年入社）</p>
+                </article>
+                <article class="p-interview-more__card swiper-slide">
+                  <figure class="p-interview-more__image">
+                    <img src="./images/common/people-04.webp" alt="技術グループ S.H" width="720" height="960" loading="lazy" decoding="async">
+                  </figure>
+                  <p class="p-interview-more__group">技術グループ</p>
+                  <h3 class="p-interview-more__copy">
+                    設計に携わる責任と面白さを、
+                    <br>
+                    次の世代へつなぐ。
+                  </h3>
+                  <p class="p-interview-more__name">S.H（<span class="u-number">2004</span>年入社）</p>
+                </article>
+              </div>
+            </div>
+            <button
+              class="p-interview-more__button p-interview-more__button--next p-interview-more__button--sp js-more-interview-next"
+              type="button"
+              aria-label="次のインタビューを表示"
+            >
+            </button>
           </div>
         </div>
       </section>
