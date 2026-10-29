@@ -75,14 +75,32 @@
   padding-left: rem(12);
   margin-left: clamp(rem(10), 3.35vw, rem(52));
   background-color: #ed0015;
+  box-shadow: inset 0 0 0 1px transparent;
   color: $white;
   font-size: clamp(rem(12), 1.05vw, rem(15));
   font-weight: 500;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
   white-space: nowrap;
+
+  @media (any-hover: hover) {
+    &:hover {
+      background-color: $white;
+      box-shadow: inset 0 0 0 1px #ed0015;
+      color: #ed0015;
+    }
+  }
+
+  &:focus-visible {
+    background-color: $white;
+    box-shadow: inset 0 0 0 1px #ed0015;
+    color: #ed0015;
+    outline: 2px solid currentColor;
+    outline-offset: rem(3);
+  }
 }
 
 .p-header__entry-arrow {
-  color: $white;
+  color: currentColor;
   font-size: rem(19);
   line-height: 1;
 }
