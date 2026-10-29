@@ -21,7 +21,7 @@
 
 .p-home-interviews__label {
   color: #ed0015;
-  font-family: $second-font-family;
+  font-family: $section-label-font-family;
   font-size: rem(14);
   font-weight: 700;
   letter-spacing: 0.1em;
@@ -166,7 +166,6 @@
 
 .p-home-interviews__group {
   width: fit-content;
-  min-width: rem(120);
   margin-top: rem(10);
   padding-top: rem(6);
   padding-right: rem(10);
@@ -179,7 +178,9 @@
   line-height: 1;
 
   @include mq("md") {
-    min-width: rem(160);
+    margin-top: rem(30);
+    padding-left: rem(24);
+    padding-right: rem(24);
     font-size: rem(18);
   }
 }
