@@ -374,13 +374,20 @@
 }
 
 .p-recruit-apply__entry.c-link-button {
+  width: 100%;
   max-width: rem(350);
   padding-top: rem(16);
-  padding-right: rem(20);
+  padding-right: rem(12);
   padding-bottom: rem(16);
-  padding-left: rem(20);
-  font-size: rem(16);
+  padding-left: rem(12);
+  font-size: clamp(rem(12), 4vw, rem(16));
   line-height: 1.75;
+
+  @include mq("md") {
+    padding-right: rem(20);
+    padding-left: rem(20);
+    font-size: rem(16);
+  }
 }
 
 .p-recruit-apply__entry > span:first-child {
