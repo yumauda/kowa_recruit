@@ -63,12 +63,19 @@
   object-fit: contain;
 }
 
-.p-environment-benefits { padding-top:rem(78); padding-bottom:rem(86); }
+.p-environment-benefits {
+  padding-top: rem(78);
+  padding-bottom: rem(86);
+  background-color: #fff;
+}
 .p-environment-benefits h2,.p-environment-offices h2,.p-environment-faq h2 { color:#555; font-size:rem(30); font-weight:100; text-align:center; }
 .p-environment-benefits h2::after,.p-environment-offices h2::after,.p-environment-faq h2::after { display:block; width:rem(40); height:rem(3); margin:rem(10) auto 0; background:#ed0015; content:""; }
 .p-environment-benefits h2 + .p-environment-benefits__grid { margin-top:rem(44); }
 .p-environment-benefits__grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:rem(18); }
-.p-environment-benefits__grid article { padding:rem(22); background:#f2f2f2; }
+.p-environment-benefits__grid article {
+  padding: rem(22);
+  background-color: #f2f2f2;
+}
 .p-environment-benefits__grid h3 { color:#555; font-size:rem(17); font-weight:100; line-height:1.6; }
 .p-environment-benefits__grid p { margin-top:rem(14); color:#777; font-size:rem(13); line-height:1.8; }
 .p-environment-benefits__grid + h2 { margin-top:rem(76); }
