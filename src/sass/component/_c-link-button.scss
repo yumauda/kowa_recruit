@@ -1,6 +1,11 @@
 @use "../global" as *;
 
 .c-link-button {
+  --button-background: #ed0015;
+  --button-color: #{$white};
+  --button-hover-background: #{$white};
+  --button-hover-color: #ed0015;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -10,11 +15,29 @@
   padding-right: rem(24);
   padding-bottom: rem(22);
   padding-left: rem(24);
-  background-color: #ed0015;
-  color: $white;
+  background-color: var(--button-background);
+  box-shadow: inset 0 0 0 1px transparent;
+  color: var(--button-color);
   font-size: rem(18);
   font-weight: 100;
   letter-spacing: 0.05em;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+
+  @media (any-hover: hover) {
+    &:hover {
+      background-color: var(--button-hover-background);
+      box-shadow: inset 0 0 0 1px var(--button-hover-color);
+      color: var(--button-hover-color);
+    }
+  }
+
+  &:focus-visible {
+    background-color: var(--button-hover-background);
+    box-shadow: inset 0 0 0 1px var(--button-hover-color);
+    color: var(--button-hover-color);
+    outline: 2px solid currentColor;
+    outline-offset: rem(3);
+  }
 
   @include mq("md") {
     padding-top: rem(19);
@@ -30,7 +53,10 @@
 }
 
 .c-link-button--outline {
+  --button-background: transparent;
+  --button-color: #333;
+  --button-hover-background: #333;
+  --button-hover-color: #{$white};
+
   border: 1px solid #333;
-  background-color: transparent;
-  color: #333;
 }
