@@ -67,7 +67,7 @@
   background-image: linear-gradient(to right, #c9c9c9, #c9c9c9);
   background-position: center top;
   background-repeat: no-repeat;
-  background-size: calc(100% - rem(8)) 1px;
+  background-size: calc(100% - rem(16)) 1px;
   text-align: center;
 
   @include mq("md") {
@@ -76,41 +76,39 @@
   }
 }
 
-.p-company-data__list article::before,
-.p-company-data__list article::after {
-  position: absolute;
-  top: rem(4);
-  bottom: rem(4);
-  width: 1px;
-  background-color: #b2b4b5;
-  content: "";
+.p-company-data__list article:nth-child(-n + 2) {
+  background-image: none;
 }
 
-.p-company-data__list article::before {
-  left: 0;
-}
-
-.p-company-data__list article::after {
-  right: 0;
-  display: none;
-}
-
-.p-company-data__list article:nth-child(2n)::after {
-  display: block;
-
+.p-company-data__list article:nth-child(3) {
   @include mq("md") {
-    display: none;
+    background-image: none;
   }
 }
 
-.p-company-data__list article:nth-child(3n)::after {
+.p-company-data__list article::before {
+  position: absolute;
+  top: rem(8);
+  bottom: rem(8);
+  left: 0;
+  display: none;
+  width: 1px;
+  background-color: #b2b4b5;
+  content: "";
+
   @include mq("md") {
     display: block;
   }
 }
 
-.p-company-data__list article:last-child::after {
+.p-company-data__list article:nth-child(2n)::before {
   display: block;
+}
+
+.p-company-data__list article:nth-child(3n + 1)::before {
+  @include mq("md") {
+    display: none;
+  }
 }
 
 .p-company-data__list h3 {
