@@ -88,7 +88,11 @@
 .p-environment-offices h3 { margin-top:rem(16); color:#555; font-size:rem(20); font-weight:100; }
 .p-environment-offices p { margin-top:rem(6); color:#777; font-size:rem(14); }
 
-.p-environment-faq { padding-top:rem(78); padding-bottom:rem(86); }
+.p-environment-faq {
+  padding-top: rem(78);
+  padding-bottom: rem(86);
+  background-color: #fff;
+}
 .p-environment-faq dl { max-width:rem(960); margin:rem(46) auto 0; }
 .p-environment-faq dl > div { padding-top:rem(28); padding-bottom:rem(28); border-bottom:1px solid #777; }
 .p-environment-faq dt { display:flex; align-items:flex-start; column-gap:rem(14); color:#555; font-size:rem(20); font-weight:100; }
