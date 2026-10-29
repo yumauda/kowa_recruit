@@ -78,12 +78,9 @@
   }
 }
 
-.p-company-products__item {
-  // 製品番号はカード写真に重ねる装飾要素のため、カードを基準に配置。
-  position: relative;
-}
-
 .p-company-products__visual {
+  // 製品番号は画像下端に重ねる装飾要素のため、画像領域を基準に配置。
+  position: relative;
   aspect-ratio: 535 / 360;
   border-radius: rem(28);
   background-color: #ccc;
@@ -91,14 +88,16 @@
 
 .p-company-products__number {
   position: absolute;
-  top: 34%;
   right: rem(18);
+  bottom: -0.5em;
   color: transparent;
   font-family: $second-font-family;
   font-size: rem(88);
+  line-height: 1;
   -webkit-text-stroke: 1px #ed0015;
 
   @include mq("md") {
+    right: rem(30);
     font-size: rem(140);
   }
 }
