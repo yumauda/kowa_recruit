@@ -85,6 +85,13 @@
   height: rem(58);
   margin-top: rem(24);
   margin-bottom: rem(24);
+
+  @include mq("md") {
+    width: rem(140);
+    height: rem(140);
+    margin-top: 0;
+    margin-bottom: 0;
+  }
 }
 
 .p-work-strength__pair > span::before,
