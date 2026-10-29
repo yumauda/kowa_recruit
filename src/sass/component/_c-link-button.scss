@@ -52,6 +52,10 @@
   white-space: nowrap;
 }
 
+.c-link-button > span[aria-hidden="true"] {
+  color: currentColor;
+}
+
 .c-link-button--outline {
   --button-background: transparent;
   --button-color: #333;
