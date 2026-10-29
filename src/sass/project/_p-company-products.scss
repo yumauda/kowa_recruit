@@ -10,14 +10,13 @@
 }
 
 .p-company-products__heading {
-  width: 100%;
-  max-width: rem(720);
   padding-top: rem(54);
   padding-bottom: rem(54);
-  background-color: #ed0015;
 }
 
 .p-company-products__title {
+  position: relative;
+  z-index: 0;
   color: $white;
   font-size: rem(30);
   font-weight: 100;
@@ -26,6 +25,22 @@
   @include mq("md") {
     font-size: rem(50);
     line-height: 1.2;
+  }
+}
+
+.p-company-products__title::before {
+  position: absolute;
+  z-index: -1;
+  top: rem(-54);
+  bottom: rem(-54);
+  left: 0;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  background-color: #ed0015;
+  content: "";
+
+  @include mq("md") {
+    width: 50vw;
   }
 }
 
