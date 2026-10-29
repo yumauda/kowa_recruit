@@ -64,7 +64,10 @@
   padding-right: rem(12);
   padding-bottom: rem(28);
   padding-left: rem(12);
-  border-top: 1px solid #c9c9c9;
+  background-image: linear-gradient(to right, #c9c9c9, #c9c9c9);
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: calc(100% - rem(8)) 1px;
   text-align: center;
 
   @include mq("md") {
@@ -76,8 +79,8 @@
 .p-company-data__list article::before,
 .p-company-data__list article::after {
   position: absolute;
-  top: -1px;
-  bottom: 0;
+  top: rem(4);
+  bottom: rem(4);
   width: 1px;
   background-color: #b2b4b5;
   content: "";
@@ -111,6 +114,9 @@
 }
 
 .p-company-data__list h3 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   color: #444;
   font-size: rem(17);
   font-weight: 100;
@@ -118,6 +124,14 @@
   @include mq("md") {
     font-size: rem(24);
   }
+}
+
+.p-company-data__list h3::after {
+  width: rem(16);
+  height: rem(2);
+  margin-top: rem(8);
+  background-color: #ed0015;
+  content: "";
 }
 
 .p-company-data__list strong {
