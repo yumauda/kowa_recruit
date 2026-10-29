@@ -119,6 +119,13 @@
   font-size: 0.42em;
 }
 
+.p-company-data__list .js-count-up {
+  display: inline-block;
+  min-width: var(--count-up-width, auto);
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+}
+
 .p-company-data__list p {
   margin-top: rem(10);
   color: #666;

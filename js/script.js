@@ -84,3 +84,69 @@ careerTabs.forEach((tab) => {
     careerTabs[nextIndex].click();
   });
 });
+
+const countUpElements = document.querySelectorAll('.js-count-up');
+
+if (countUpElements.length > 0) {
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const duration = 2000;
+  const easing = (progress) => (progress === 1 ? 1 : 1 - 2 ** (-10 * progress));
+
+  const animateCount = (element) => {
+    if (element.dataset.countUpComplete === 'true') return;
+
+    const target = Number(element.dataset.countUp);
+    const startTime = performance.now();
+    element.dataset.countUpComplete = 'true';
+
+    element.animate(
+      [
+        { opacity: 0.35, transform: 'translateY(18px)' },
+        { opacity: 1, transform: 'translateY(0)' },
+      ],
+      {
+        duration: 800,
+        easing: 'cubic-bezier(0.19, 1, 0.22, 1)',
+        fill: 'both',
+      },
+    );
+
+    const update = (currentTime) => {
+      const progress = Math.min((currentTime - startTime) / duration, 1);
+      element.textContent = String(progress === 1 ? target : Math.floor(target * easing(progress)));
+
+      if (progress < 1) requestAnimationFrame(update);
+    };
+
+    requestAnimationFrame(update);
+  };
+
+  if (!prefersReducedMotion) {
+    countUpElements.forEach((element) => {
+      const digitCount = element.dataset.countUp.length;
+      element.style.setProperty('--count-up-width', `${digitCount}ch`);
+      element.textContent = '0';
+    });
+
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+
+            animateCount(entry.target);
+            observer.unobserve(entry.target);
+          });
+        },
+        {
+          rootMargin: '0px 0px -10% 0px',
+          threshold: 0.35,
+        },
+      );
+
+      countUpElements.forEach((element) => observer.observe(element));
+    } else {
+      countUpElements.forEach(animateCount);
+    }
+  }
+}
