@@ -1,0 +1,46 @@
+.js-opening-header,
+.js-opening-fade,
+.js-scroll-fade {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s, transform 0.8s;
+
+  @media (prefers-reduced-motion: reduce) {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+.js-opening-header {
+  transform: translateY(-40px);
+  transition-duration: 1s;
+}
+
+.js-opening-clip,
+.js-scroll-clip {
+  clip-path: inset(0 100% 0 0);
+  transition: clip-path 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+
+  @media (prefers-reduced-motion: reduce) {
+    clip-path: none;
+    transition: none;
+  }
+}
+
+.js-scroll-clip--reverse {
+  clip-path: inset(0 0 0 100%);
+}
+
+.js-opening-header.is-view,
+.js-opening-fade.is-view,
+.js-scroll-fade.is-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.js-opening-clip.is-view,
+.js-scroll-clip.is-view,
+.js-scroll-clip--reverse.is-view {
+  clip-path: inset(0 0 0 0);
+}

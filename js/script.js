@@ -85,68 +85,158 @@ careerTabs.forEach((tab) => {
   });
 });
 
-const countUpElements = document.querySelectorAll('.js-count-up');
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-if (countUpElements.length > 0) {
-  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const duration = 2000;
-  const easing = (progress) => (progress === 1 ? 1 : 1 - 2 ** (-10 * progress));
+if (!prefersReducedMotion) {
+  const openingTargets = document.querySelectorAll(
+    '.js-header, .p-home-hero__content, .p-home-hero__image, .p-page-hero__content, .p-page-hero__image, .p-interview-hero__copy, .p-interview-hero > figure, .p-recruit-person__heading',
+  );
 
-  const animateCount = (element) => {
-    if (element.dataset.countUpComplete === 'true') return;
+  openingTargets.forEach((element) => {
+    if (element.classList.contains('js-header')) {
+      element.classList.add('js-opening-header');
+      return;
+    }
 
-    const target = Number(element.dataset.countUp);
-    const startTime = performance.now();
-    element.dataset.countUpComplete = 'true';
+    if (element.matches('figure, [class$="__image"]')) {
+      element.classList.add('js-opening-clip');
+      return;
+    }
 
-    element.animate(
-      [
-        { opacity: 0.35, transform: 'translateY(18px)' },
-        { opacity: 1, transform: 'translateY(0)' },
-      ],
+    element.classList.add('js-opening-fade');
+  });
+
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      openingTargets.forEach((element) => element.classList.add('is-view'));
+    });
+  });
+
+  const fadeCandidates = [
+    ...document.querySelectorAll(
+      'main section [class$="__heading"], main section [class$="__content"], main section article, main section a[class*="__card"], main section div[class*="__card"], main section dl, main section table, main section h2, main section h3',
+    ),
+  ];
+  const fadeTargets = fadeCandidates.filter((element, index, candidates) => {
+    if (element.closest('.p-home-hero, .p-page-hero, .p-interview-hero')) return false;
+    if (element.classList.contains('p-recruit-person__heading')) return false;
+
+    return !candidates.some((candidate, candidateIndex) => (
+      candidateIndex !== index && candidate.contains(element)
+    ));
+  });
+  const clipTargets = [...document.querySelectorAll('main section figure')].filter((element) => (
+    !element.closest('.p-home-hero, .p-page-hero, .p-interview-hero')
+  ));
+
+  fadeTargets.forEach((element) => element.classList.add('js-scroll-fade'));
+  clipTargets.forEach((element, index) => {
+    element.classList.add('js-scroll-clip');
+    if (index % 2 === 1) element.classList.add('js-scroll-clip--reverse');
+  });
+
+  if ('IntersectionObserver' in window) {
+    const fadeObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+
+          entry.target.classList.add('is-view');
+          fadeObserver.unobserve(entry.target);
+        });
+      },
       {
-        duration: 800,
-        easing: 'cubic-bezier(0.19, 1, 0.22, 1)',
-        fill: 'both',
+        rootMargin: '0px 0px -10% 0px',
+        threshold: 0.01,
+      },
+    );
+    const clipGroups = new Map();
+
+    fadeTargets.forEach((element) => fadeObserver.observe(element));
+    clipTargets.forEach((element) => {
+      const observerTarget = element.parentElement;
+      const targets = clipGroups.get(observerTarget) ?? [];
+      targets.push(element);
+      clipGroups.set(observerTarget, targets);
+    });
+
+    const clipObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+
+          clipGroups.get(entry.target).forEach((element) => element.classList.add('is-view'));
+          clipObserver.unobserve(entry.target);
+        });
+      },
+      {
+        rootMargin: '0px 0px -10% 0px',
+        threshold: 0.01,
       },
     );
 
-    const update = (currentTime) => {
-      const progress = Math.min((currentTime - startTime) / duration, 1);
-      element.textContent = String(progress === 1 ? target : Math.floor(target * easing(progress)));
+    clipGroups.forEach((targets, observerTarget) => clipObserver.observe(observerTarget));
+  } else {
+    fadeTargets.forEach((element) => element.classList.add('is-view'));
+    clipTargets.forEach((element) => element.classList.add('is-view'));
+  }
+}
 
-      if (progress < 1) requestAnimationFrame(update);
-    };
+const countUpElements = document.querySelectorAll('.js-count-up');
 
-    requestAnimationFrame(update);
-  };
+if (countUpElements.length > 0 && !prefersReducedMotion) {
+  const delays = [0.4, 0.2, 0.05, 0];
 
-  if (!prefersReducedMotion) {
-    countUpElements.forEach((element) => {
-      const digitCount = element.dataset.countUp.length;
-      element.style.setProperty('--count-up-width', `${digitCount}ch`);
-      element.textContent = '0';
+  countUpElements.forEach((element) => {
+    const target = element.dataset.countUp;
+    const accessibleValue = document.createElement('span');
+    accessibleValue.className = 'js-count-up__accessible';
+    accessibleValue.textContent = target;
+    element.textContent = '';
+    element.append(accessibleValue);
+
+    [...target].forEach((digit, index) => {
+      const digitWrap = document.createElement('span');
+      const rail = document.createElement('span');
+      const targetDigit = Number(digit);
+      digitWrap.className = 'js-count-up__digit';
+      digitWrap.setAttribute('aria-hidden', 'true');
+      rail.className = 'js-count-up__rail';
+      rail.style.setProperty('--count-up-delay', `${delays[index] ?? 0}s`);
+
+      const railLength = targetDigit === 0 ? 10 : 9;
+
+      for (let offset = 0; offset < railLength; offset += 1) {
+        const label = document.createElement('span');
+        label.className = 'js-count-up__label';
+        label.textContent = String(
+          targetDigit === 0 ? offset : ((targetDigit - 1 + offset) % 9) + 1,
+        );
+        rail.append(label);
+      }
+
+      digitWrap.append(rail);
+      element.append(digitWrap);
     });
 
-    if ('IntersectionObserver' in window) {
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (!entry.isIntersecting) return;
+    element.classList.add('is-count-ready');
+  });
 
-            animateCount(entry.target);
-            observer.unobserve(entry.target);
-          });
-        },
-        {
-          rootMargin: '0px 0px -10% 0px',
-          threshold: 0.35,
-        },
-      );
+  if ('IntersectionObserver' in window) {
+    const countObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
 
-      countUpElements.forEach((element) => observer.observe(element));
-    } else {
-      countUpElements.forEach(animateCount);
-    }
+          entry.target.classList.add('is-view');
+          countObserver.unobserve(entry.target);
+        });
+      },
+      { threshold: 0.5 },
+    );
+
+    countUpElements.forEach((element) => countObserver.observe(element));
+  } else {
+    countUpElements.forEach((element) => element.classList.add('is-view'));
   }
 }
