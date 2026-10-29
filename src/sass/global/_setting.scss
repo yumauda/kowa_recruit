@@ -23,8 +23,14 @@ $second-font-family: "Oswald", sans-serif;
 $number-font-family: "Oswald", $base-font-family;
 // ※検証ツールでしっかり反映されているか確認する
 
+html,
 body {
+  max-width: 100%;
+  overflow-x: hidden;
   overflow-x: clip;
+}
+
+body {
   background-color: #f4f3f0;
   color: #111;
   font-family: $base-font-family;

@@ -68,4 +68,19 @@ careerTabs.forEach((tab) => {
     target.classList.add('is-active');
     target.hidden = false;
   });
+
+  tab.addEventListener('keydown', (event) => {
+    const currentIndex = [...careerTabs].indexOf(tab);
+    let nextIndex = currentIndex;
+
+    if (event.key === 'ArrowRight') nextIndex = (currentIndex + 1) % careerTabs.length;
+    if (event.key === 'ArrowLeft') nextIndex = (currentIndex - 1 + careerTabs.length) % careerTabs.length;
+    if (event.key === 'Home') nextIndex = 0;
+    if (event.key === 'End') nextIndex = careerTabs.length - 1;
+    if (nextIndex === currentIndex) return;
+
+    event.preventDefault();
+    careerTabs[nextIndex].focus();
+    careerTabs[nextIndex].click();
+  });
 });
