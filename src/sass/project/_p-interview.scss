@@ -462,7 +462,14 @@
 }
 
 .p-interview-more__card {
+  display: block;
   height: auto;
+  color: inherit;
+
+  &:focus-visible {
+    outline: rem(2) solid #ed0015;
+    outline-offset: rem(4);
+  }
 }
 
 .p-interview-more__navigation {
