@@ -138,7 +138,18 @@
 .p-interview-story figure { aspect-ratio:4/3; overflow:hidden; }
 
 .p-interview-day {
-  background: #f2f1ee;
+  background-color: #f2f1ee;
+
+  @include mq("md") {
+    // 写真だけを背景帯の下へ張り出させ、次の白背景へ自然につなげる。
+    background-image: linear-gradient(
+      to bottom,
+      #f2f1ee 0,
+      #f2f1ee calc(100% - rem(118)),
+      #fff calc(100% - rem(118)),
+      #fff 100%
+    );
+  }
 }
 .p-interview-day h2 {
   display: inline-block;
@@ -153,9 +164,10 @@
   font-weight: 100;
 
   @include mq("md") {
-    padding-top: rem(11);
+    margin-top: rem(-28);
+    padding-top: rem(15);
     padding-right: rem(52);
-    padding-bottom: rem(11);
+    padding-bottom: rem(15);
     padding-left: max(calc((100vw - rem(1200)) / 2), rem(30));
     font-size: rem(36);
     line-height: rem(48);
@@ -171,7 +183,7 @@
     width: calc(100% + var(--right-bleed));
     align-items: flex-start;
     column-gap: rem(70);
-    padding-top: rem(57);
+    padding-top: rem(43);
     padding-bottom: 0;
   }
 }
@@ -220,6 +232,7 @@
     padding-bottom: rem(14);
     padding-left: rem(34);
     font-size: rem(18);
+    font-weight: 400;
     letter-spacing: 0.02em;
     line-height: rem(32);
 
@@ -256,6 +269,8 @@
     flex-grow: 0;
     flex-shrink: 0;
     margin-top: rem(28);
+    border-top-left-radius: rem(84);
+    border-bottom-left-radius: rem(84);
   }
 }
 
