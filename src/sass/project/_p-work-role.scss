@@ -11,7 +11,20 @@
   }
 }
 
-.p-work-role--sales { background-color: #f2f1ee; }
+.p-work-role--sales {
+  background-color: #f2f1ee;
+
+  @include mq("md") {
+    display: flow-root;
+    padding-top: 0;
+  }
+}
+
+.p-work-role--engineer {
+  @include mq("md") {
+    padding-bottom: rem(245);
+  }
+}
 
 .p-work-role__hero {
   width: 100vw;
@@ -38,6 +51,7 @@
 .p-work-role--sales .p-work-role__hero {
   @include mq("md") {
     width: calc(100% + (100vw - 100%) / 2);
+    margin-top: rem(-145);
     margin-left: calc((100% - 100vw) / 2);
   }
 }
@@ -72,6 +86,12 @@
   }
 }
 
+.p-work-role--sales .p-work-role__intro > div {
+  @include mq("md") {
+    padding-top: rem(36);
+  }
+}
+
 .p-work-role__label {
   color: #ed0015;
   font-size: rem(14);
@@ -99,6 +119,10 @@
 
 .p-work-role--sales .p-work-role__en {
   @include mq("md") {
+    top: rem(-64);
+    left: rem(340);
+    padding-top: rem(14);
+    padding-bottom: rem(14);
     background-color: #f2f1ee;
   }
 }
