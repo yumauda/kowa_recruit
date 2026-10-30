@@ -90,7 +90,8 @@
   margin-top: rem(10);
   margin-right: calc($padding-sp * -1);
   margin-left: calc($padding-sp * -1);
-  overflow: hidden;
+  position: relative;
+  overflow: visible;
 
   @include mq("md") {
     flex: 1 1 auto;
@@ -99,6 +100,31 @@
     margin-right: 0;
     margin-left: 0;
   }
+}
+
+.p-home-career__image::before {
+  content: "";
+  display: none;
+  position: absolute;
+  aspect-ratio: 400 / 300;
+  width: rem(400);
+  background-image: url(../images/common/top_career_bg.webp);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  pointer-events: none;
+  z-index: 0;
+
+  @include mq("md") {
+    display: block;
+    left: rem(-30);
+    bottom: rem(-30);
+  }
+}
+
+.p-home-career__image picture {
+  position: relative;
+  z-index: 1;
 }
 
 .p-home-career__image picture,
@@ -110,4 +136,35 @@
 
 .p-home-career__image img {
   object-fit: cover;
+}
+
+figure.p-home-career__image.js-scroll-clip,
+figure.p-home-career__image.js-scroll-clip.is-view {
+  clip-path: none;
+  transition: none;
+}
+
+.p-home-career__image.js-scroll-clip picture {
+  clip-path: inset(0 100% 0 0);
+  transition: clip-path 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+
+  @media (prefers-reduced-motion: reduce) {
+    clip-path: none;
+    transition: none;
+  }
+}
+
+.p-home-career__image.js-scroll-clip::before {
+  clip-path: inset(0 100% 0 0);
+  transition: clip-path 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+
+  @media (prefers-reduced-motion: reduce) {
+    clip-path: none;
+    transition: none;
+  }
+}
+
+.p-home-career__image.js-scroll-clip.is-view::before,
+.p-home-career__image.js-scroll-clip.is-view picture {
+  clip-path: inset(0 0 0 0);
 }
