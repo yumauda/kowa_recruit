@@ -356,6 +356,7 @@
 .p-career-people {
   padding-top: rem(78);
   padding-bottom: rem(88);
+  background-color: #fff;
 
   @include mq("md") {
     padding-top: rem(110);
