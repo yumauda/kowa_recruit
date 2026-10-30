@@ -2,12 +2,12 @@
 
 .p-company-distribution {
   padding-top: rem(76);
-  padding-bottom: rem(76);
+  padding-bottom: rem(150);
   background-color: #f2f1ee;
 
   @include mq("md") {
     padding-top: rem(120);
-    padding-bottom: rem(110);
+    padding-bottom: rem(240);
   }
 }
 
