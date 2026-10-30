@@ -77,7 +77,7 @@
   @include mq("md") {
     flex-shrink: 0;
     width: calc(50% + (100vw - 100%) / 2);
-    margin-top: 0;
+    margin-top: rem(-70);
   }
 }
 
