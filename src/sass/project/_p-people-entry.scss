@@ -44,8 +44,15 @@
   }
 }
 
-.p-people-entry .c-link-button { margin-right: auto; margin-left: auto; }
+.p-people-entry .c-link-button {
+  margin-right: auto;
+  margin-left: auto;
 
-@include mq("md") {
-  .p-people-entry .c-link-button { margin-right: 0; margin-left: 0; }
+  @include mq("md") {
+    width: rem(220);
+    margin-right: 0;
+    margin-left: 0;
+    padding-top: rem(18);
+    padding-bottom: rem(18);
+  }
 }

@@ -122,3 +122,11 @@
   .p-environment-entry p { font-size:rem(18); }
   .p-environment-entry .l-inner > div { flex-direction:row; justify-content:center; column-gap:rem(40); }
 }
+
+.p-environment-entry .c-link-button {
+  @include mq("md") {
+    width: rem(220);
+    padding-top: rem(18);
+    padding-bottom: rem(18);
+  }
+}

@@ -104,4 +104,10 @@
 
 .p-home-environment .c-link-button {
   margin-top: rem(30);
+
+  @include mq("md") {
+    width: rem(230);
+    padding-top: rem(18);
+    padding-bottom: rem(18);
+  }
 }

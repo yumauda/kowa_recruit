@@ -98,6 +98,9 @@
   margin-top: rem(30);
 
   @include mq("md") {
+    width: rem(230);
     margin-top: rem(36);
+    padding-top: rem(18);
+    padding-bottom: rem(18);
   }
 }

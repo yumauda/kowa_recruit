@@ -70,4 +70,10 @@
 
 .p-company-works .c-link-button {
   margin-top: rem(34);
+
+  @include mq("md") {
+    width: rem(230);
+    padding-top: rem(18);
+    padding-bottom: rem(18);
+  }
 }
