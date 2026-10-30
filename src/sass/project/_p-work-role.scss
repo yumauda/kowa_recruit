@@ -56,12 +56,10 @@
 
   @include mq("md") {
     display: grid;
-    grid-template-columns: 52% minmax(0, 1fr);
-    align-items: end;
-    column-gap: rem(70);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+    column-gap: 0;
     margin-top: rem(-38);
-    padding-right: rem(60);
-    padding-left: rem(60);
   }
 }
 
@@ -71,8 +69,6 @@
 
   @include mq("md") {
     padding-top: rem(46);
-    padding-right: rem(32);
-    background-color: inherit;
   }
 }
 
@@ -92,9 +88,18 @@
   -webkit-text-stroke: 1px #f5b6bb;
 
   @include mq("md") {
-    top: rem(10);
-    right: rem(-10);
-    font-size: rem(72);
+    top: rem(-50);
+    right: auto;
+    left: rem(220);
+    background-color: #fff;
+    font-size: rem(120);
+    line-height: 0.9;
+  }
+}
+
+.p-work-role--sales .p-work-role__en {
+  @include mq("md") {
+    background-color: #f2f1ee;
   }
 }
 
@@ -127,8 +132,8 @@
   line-height: 2;
 
   @include mq("md") {
-    margin-top: 0;
-    font-size: rem(18);
+    margin-top: rem(119);
+    font-size: rem(16);
   }
 }
 
