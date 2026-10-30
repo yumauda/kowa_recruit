@@ -233,6 +233,7 @@
   @include mq("md") {
     display: grid;
     grid-template-columns: rem(400) 1fr;
+    align-items: center;
     column-gap: rem(32);
     padding-top: rem(40);
     padding-right: rem(40);
