@@ -59,3 +59,16 @@
     margin-top: rem(1);
   }
 }
+
+.p-footer--recruit {
+  @include mq("md") {
+    padding-top: rem(10);
+    padding-bottom: rem(8);
+  }
+}
+
+.p-footer--recruit .p-footer__copyright {
+  @include mq("md") {
+    margin-top: rem(-5);
+  }
+}

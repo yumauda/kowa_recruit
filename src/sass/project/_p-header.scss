@@ -11,6 +11,11 @@
   backdrop-filter: blur(rem(4));
 }
 
+.p-header--recruit {
+  background-color: #656665;
+  backdrop-filter: none;
+}
+
 .p-header__content {
   display: flex;
   align-items: center;

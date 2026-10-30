@@ -15,9 +15,11 @@
     <link rel="stylesheet" href="../css/styles.css">
     <script type="module" src="../js/script.js">
     </script>
+    <script type="module" src="../js/recruit-download.js">
+    </script>
   </head>
   <body>
-    <header class="p-header js-header">
+    <header class="p-header p-header--recruit js-header">
       <div class="l-inner">
         <div class="p-header__content">
           <a class="p-header__logo" href="../" aria-label="恒和工業株式会社 採用サイト トップ">
@@ -228,6 +230,10 @@
               </dd>
             </div>
           </dl>
+          <button class="c-link-button p-recruit-requirements__download js-recruit-download" type="button">
+            <span>募集要項をダウンロード</span>
+            <span aria-hidden="true">→</span>
+          </button>
         </div>
       </section>
       <section class="p-recruit-apply" id="entry" aria-labelledby="apply-title">
@@ -258,7 +264,7 @@
         </div>
       </section>
     </main>
-    <footer class="p-footer">
+    <footer class="p-footer p-footer--recruit">
       <div class="l-inner">
         <div class="p-footer__content">
           <a class="p-footer__logo" href="../">

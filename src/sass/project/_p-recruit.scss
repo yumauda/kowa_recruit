@@ -7,7 +7,7 @@
 
   @include mq("md") {
     padding-top: rem(102);
-    padding-bottom: rem(105);
+    padding-bottom: rem(46);
   }
 
   @media print {
@@ -32,12 +32,12 @@
 .p-recruit-person__heading > p:first-child {
   color: #e50012;
   font-size: rem(15);
-  font-weight: 100;
+  font-weight: 700;
   letter-spacing: 0.1em;
 
   @include mq("md") {
     font-size: rem(20);
-    line-height: 3;
+    line-height: 1.5;
   }
 }
 
@@ -45,9 +45,10 @@
   margin-top: rem(12);
   color: #444;
   font-size: rem(30);
-  font-weight: 100;
+  font-weight: 700;
 
   @include mq("md") {
+    margin-top: rem(8);
     font-size: rem(50);
   }
 }
@@ -72,8 +73,8 @@
 
   @include mq("md") {
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    column-gap: rem(80);
-    margin-top: rem(60);
+    column-gap: rem(60);
+    margin-top: rem(42);
   }
 }
 
@@ -98,6 +99,7 @@
     max-width: none;
     margin-right: 0;
     margin-left: 0;
+    padding-bottom: rem(42);
   }
 }
 
@@ -115,7 +117,7 @@
   margin-top: rem(12);
   color: #555;
   font-size: rem(26);
-  font-weight: 100;
+  font-weight: 700;
   line-height: 1.5;
 
   @include mq("md") {
@@ -136,6 +138,10 @@
 
 .p-recruit-person__closing {
   text-align: center;
+
+  @include mq("md") {
+    margin-top: rem(50);
+  }
 }
 
 .p-recruit-requirements {
@@ -144,8 +150,8 @@
   background-color: #f2f1ee;
 
   @include mq("md") {
-    padding-top: rem(105);
-    padding-bottom: rem(110);
+    padding-top: rem(46);
+    padding-bottom: rem(93);
   }
 
   @media print {
@@ -158,7 +164,7 @@
 .p-recruit-requirements h2 {
   color: #555;
   font-size: rem(30);
-  font-weight: 100;
+  font-weight: 700;
   letter-spacing: 0.1em;
   line-height: 1.5;
   text-align: center;
@@ -183,7 +189,7 @@
 .p-recruit-apply h2 {
   color: #555;
   font-size: rem(30);
-  font-weight: 100;
+  font-weight: 700;
   letter-spacing: 0.1em;
   line-height: 1.5;
   text-align: center;
@@ -242,7 +248,7 @@
     padding-left: rem(26);
     color: #333;
     font-size: rem(16);
-    font-weight: 100;
+    font-weight: 500;
     letter-spacing: 0.05em;
     line-height: 2;
   }
@@ -312,6 +318,7 @@
   @include mq("md") {
     color: inherit;
     font-size: inherit;
+    font-weight: 400;
   }
 }
 
@@ -327,7 +334,23 @@
 .p-recruit-requirements__salary-line {
   width: rem(245);
   padding-left: rem(16);
+  font-weight: 400;
   justify-content: space-between;
+}
+
+.p-recruit-requirements__download.c-link-button {
+  width: 100%;
+  max-width: rem(260);
+  margin-top: rem(46);
+  margin-right: auto;
+  margin-left: auto;
+  border: 0;
+  font-family: inherit;
+  cursor: pointer;
+
+  @media print {
+    display: none;
+  }
 }
 
 .p-recruit-apply {
@@ -337,7 +360,7 @@
   text-align: center;
 
   @include mq("md") {
-    padding-top: rem(110);
+    padding-top: rem(80);
     padding-bottom: rem(128);
   }
 
@@ -355,7 +378,7 @@
   line-height: 2;
 
   @include mq("md") {
-    margin-top: rem(40);
+    margin-top: rem(68);
     font-size: rem(18);
   }
 }
@@ -410,7 +433,7 @@
   background-color: #efefef;
   color: #666;
   font-size: rem(16);
-  font-weight: 100;
+  font-weight: 500;
   letter-spacing: 0.05em;
   line-height: 1.75;
 
@@ -447,7 +470,7 @@
   border: 1px solid #333;
   color: #333;
   font-size: rem(14);
-  font-weight: 100;
+  font-weight: 500;
   letter-spacing: 0.05em;
   line-height: rem(29);
 
@@ -479,7 +502,7 @@
   margin-top: rem(10);
   color: #333;
   font-size: rem(13);
-  font-weight: 100;
+  font-weight: 500;
   letter-spacing: 0.05em;
   line-height: 1.75;
 
