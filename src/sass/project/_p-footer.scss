@@ -46,3 +46,16 @@
     font-size: rem(11);
   }
 }
+
+.p-footer--interview {
+  @include mq("md") {
+    padding-top: rem(4);
+    padding-bottom: rem(7);
+  }
+}
+
+.p-footer--interview .p-footer__copyright {
+  @include mq("md") {
+    margin-top: rem(1);
+  }
+}

@@ -18,7 +18,7 @@
   margin-top: rem(70);
 
   @include mq("md") {
-    margin-top: rem(95);
+    margin-top: rem(108);
   }
 }
 .p-interview-hero__copy > span {
@@ -30,6 +30,13 @@
   background: #ed0015;
   color: #fff;
   font-size: rem(13);
+
+  @include mq("md") {
+    width: rem(160);
+    padding-right: 0;
+    padding-left: 0;
+    text-align: center;
+  }
 }
 .p-interview-hero__copy h1 {
   margin-top: rem(16);
@@ -39,10 +46,17 @@
   line-height: 1.55;
 
   @include mq("md") {
+    margin-top: rem(3);
     font-size: rem(50);
+    font-weight: 700;
   }
 }
-.p-interview-hero__copy p { margin-top:rem(14); color:#777; font-size:rem(15); }
+.p-interview-hero__copy p {
+  margin-top: rem(14);
+  color: #777;
+  font-size: rem(15);
+  font-weight: 300;
+}
 
 .p-interview-story {
   overflow: hidden;
@@ -59,12 +73,38 @@
   padding-bottom: rem(76);
 
   @include mq("md") {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    display: flex;
+    flex-direction: row;
     align-items: center;
     column-gap: rem(80);
-    padding-top: rem(100);
-    padding-bottom: rem(100);
+  }
+}
+
+.p-interview-story article:first-child {
+  @include mq("md") {
+    padding-top: rem(124);
+    padding-bottom: rem(214);
+  }
+}
+
+.p-interview-story article:nth-child(2) {
+  @include mq("md") {
+    padding-top: rem(9);
+    padding-bottom: rem(73);
+  }
+}
+
+.p-interview-story article:last-child {
+  @include mq("md") {
+    padding-top: rem(151);
+    padding-bottom: rem(106);
+  }
+}
+
+.p-interview-story article > div {
+  @include mq("md") {
+    flex: 1;
+    min-width: 0;
   }
 }
 
@@ -116,39 +156,46 @@
 
   @include mq("md") {
     font-size: rem(36);
+    font-weight: 700;
   }
 }
-.p-interview-story p,.p-interview-message p {
+.p-interview-story p,
+.p-interview-message__body p {
   margin-top: rem(24);
   color: #777;
   font-size: rem(15);
   font-weight: 100;
   line-height: 2;
 }
-.p-interview-message p {
+.p-interview-message__body p {
   @include mq("md") {
-    font-size: rem(17);
+    margin-top: rem(8);
+    font-size: rem(15);
+    font-weight: 300;
+    line-height: rem(36);
   }
 }
 .p-interview-story p {
   @include mq("md") {
-    font-size: rem(17);
+    font-size: rem(16);
+    font-weight: 300;
+    line-height: 2;
   }
 }
-.p-interview-story figure { aspect-ratio:4/3; overflow:hidden; }
+.p-interview-story figure {
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+
+  @include mq("md") {
+    flex: 0 0 rem(520);
+  }
+}
 
 .p-interview-day {
   background-color: #f2f1ee;
 
   @include mq("md") {
-    // 写真だけを背景帯の下へ張り出させ、次の白背景へ自然につなげる。
-    background-image: linear-gradient(
-      to bottom,
-      #f2f1ee 0,
-      #f2f1ee calc(100% - rem(118)),
-      #fff calc(100% - rem(118)),
-      #fff 100%
-    );
+    background-color: #fff;
   }
 }
 .p-interview-day h2 {
@@ -164,16 +211,19 @@
   font-weight: 100;
 
   @include mq("md") {
-    margin-top: rem(-28);
-    padding-top: rem(15);
-    padding-right: rem(52);
-    padding-bottom: rem(15);
+    width: rem(460);
+    padding-top: rem(11);
+    padding-right: 0;
+    padding-bottom: rem(11);
     padding-left: max(calc((100vw - rem(1200)) / 2), rem(30));
     font-size: rem(36);
+    font-weight: 700;
     line-height: rem(48);
   }
 }
 .p-interview-day__layout {
+  position: relative;
+  z-index: 0;
   padding-top: rem(44);
   padding-bottom: rem(54);
 
@@ -183,8 +233,21 @@
     width: calc(100% + var(--right-bleed));
     align-items: flex-start;
     column-gap: rem(70);
-    padding-top: rem(43);
+    padding-top: rem(57);
     padding-bottom: 0;
+  }
+}
+
+.p-interview-day__layout::before {
+  @include mq("md") {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: calc(50% - 50vw - var(--right-bleed) / 2);
+    width: 100vw;
+    height: calc(100% - rem(120));
+    background-color: #f2f1ee;
+    content: "";
   }
 }
 .p-interview-day ol {
@@ -275,36 +338,59 @@
 }
 
 .p-interview-message {
+  background-color: #fff;
   padding-top: rem(76);
   padding-bottom: rem(76);
 
   @include mq("md") {
-    padding-top: rem(120);
-    padding-bottom: rem(120);
+    padding-top: rem(139);
+    padding-bottom: rem(140);
   }
 }
-.p-interview-message .l-inner {
+.p-interview-message__layout {
   padding-top: rem(36);
   padding-bottom: rem(36);
   border-top: 1px solid #777;
   border-bottom: 1px solid #777;
 
   @include mq("md") {
-    display: grid;
-    grid-template-columns: rem(260) 1fr;
+    display: flex;
     align-items: center;
-    column-gap: rem(60);
+    padding-top: rem(33);
+    padding-bottom: rem(32);
   }
 }
-.p-interview-message__label { color:#222!important; font-family:$second-font-family; font-size:rem(40)!important; font-weight:700!important; }
-.p-interview-message h2 {
+
+.p-interview-message__label {
+  margin-top: 0;
+  color: #222;
+  font-family: $second-font-family;
+  font-size: rem(40);
+  font-weight: 700;
+
+  @include mq("md") {
+    flex: 0 0 rem(280);
+    font-size: rem(48);
+    line-height: 1.5;
+    text-align: center;
+  }
+}
+
+.p-interview-message__body {
+  min-width: 0;
+  flex: 1;
+}
+
+.p-interview-message__body h2 {
   color: #555;
   font-size: rem(20);
   font-weight: 100;
   line-height: 1.8;
 
   @include mq("md") {
-    font-size: rem(24);
+    font-size: rem(20);
+    font-weight: 700;
+    line-height: 1.8;
   }
 }
 
@@ -314,8 +400,8 @@
   background: #f2f1ee;
 
   @include mq("md") {
-    padding-top: rem(110);
-    padding-bottom: rem(120);
+    padding-top: rem(68);
+    padding-bottom: rem(171);
   }
 }
 
@@ -333,6 +419,10 @@
   font-size: rem(16);
   font-weight: 700;
   letter-spacing: 0.1em;
+
+  @include mq("md") {
+    font-size: rem(18);
+  }
 }
 
 .p-interview-more__title {
@@ -342,7 +432,8 @@
   font-weight: 100;
 
   @include mq("md") {
-    font-size: rem(46);
+    font-size: rem(36);
+    font-weight: 700;
   }
 }
 
@@ -356,6 +447,7 @@
   @include mq("md") {
     display: block;
     width: 100%;
+    margin-top: rem(43);
     margin-left: 0;
   }
 }
@@ -466,6 +558,7 @@
   white-space: nowrap;
 
   @include mq("md") {
+    margin-top: rem(30);
     padding-right: rem(18);
     padding-left: rem(18);
     font-size: rem(13);
@@ -480,7 +573,8 @@
   line-height: 1.7;
 
   @include mq("md") {
-    font-size: rem(23);
+    font-size: rem(18);
+    font-weight: 700;
   }
 }
 

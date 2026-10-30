@@ -96,5 +96,5 @@ initializeInterviewSwiper({
   nextButtonSelector: '.js-more-interview-next',
   containerMessage: '他のインタビュー一覧',
   mobileSpaceBetween: 18,
-  desktopSpaceBetween: 70,
+  desktopSpaceBetween: 60,
 });
