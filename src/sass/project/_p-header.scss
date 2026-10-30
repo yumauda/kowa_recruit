@@ -108,8 +108,10 @@
 .p-header__drawer {
   position: relative;
   z-index: 102;
+  margin-right: calc($padding-sp * -1);
 
   @include mq("md") {
     display: none;
+    margin-right: 0;
   }
 }

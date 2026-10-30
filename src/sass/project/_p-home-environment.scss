@@ -46,7 +46,7 @@
   margin-left: auto;
   padding-top: rem(30);
   padding-right: rem(20);
-  padding-bottom: rem(40);
+  padding-bottom: rem(41);
   padding-left: rem(20);
   background-color: rgba(#252525, 0.64);
 
@@ -67,6 +67,7 @@
   font-size: rem(14);
   font-weight: 700;
   letter-spacing: 0.1em;
+  line-height: 2;
 
   @include mq("md") {
     font-size: rem(20);
@@ -74,23 +75,26 @@
 }
 
 .p-home-environment__title {
-  margin-top: rem(16);
+  margin-top: rem(3);
   color: $white;
+  font-feature-settings: "palt";
   font-size: rem(24);
   font-weight: 100;
   letter-spacing: 0.05em;
-  line-height: 1.35;
+  line-height: 1.3333;
 
   @include mq("md") {
     margin-top: rem(12);
+    font-feature-settings: normal;
     font-size: rem(48);
     line-height: 1.2;
   }
 }
 
 .p-home-environment__text {
-  margin-top: rem(34);
+  margin-top: rem(19);
   color: rgba($white, 0.78);
+  font-feature-settings: "palt";
   font-size: rem(16);
   font-weight: 100;
   letter-spacing: 0.05em;
@@ -98,15 +102,28 @@
 
   @include mq("md") {
     margin-top: rem(30);
+    font-feature-settings: normal;
     font-size: rem(18);
   }
 }
 
 .p-home-environment .c-link-button {
-  margin-top: rem(30);
+  width: rem(230);
+  margin-top: rem(13);
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: rem(18);
+  padding-right: rem(20);
+  padding-bottom: rem(18);
+  padding-left: rem(20);
+  font-size: rem(16);
+  letter-spacing: 0.1em;
 
   @include mq("md") {
     width: rem(230);
+    margin-top: rem(30);
+    margin-right: 0;
+    margin-left: 0;
     padding-top: rem(18);
     padding-bottom: rem(18);
   }

@@ -1,8 +1,8 @@
 @use "../global" as *;
 
 .p-home-entry {
-  padding-top: rem(60);
-  padding-bottom: 0;
+  padding-top: rem(82);
+  padding-bottom: rem(80);
   background-color: #fff;
 
   @include mq("md") {
@@ -17,12 +17,14 @@
 
 .p-home-entry__title {
   color: #333;
+  font-feature-settings: "palt";
   font-size: clamp(rem(32), 9.23vw, rem(36));
   font-weight: 100;
   letter-spacing: 0.05em;
-  line-height: 1.3;
+  line-height: 1.1111;
 
   @include mq("md") {
+    font-feature-settings: normal;
     font-size: rem(70);
     line-height: 1.2;
   }
@@ -32,7 +34,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: rem(36);
+  margin-top: rem(31);
 
   @include mq("md") {
     flex-direction: row;
@@ -51,6 +53,13 @@
 }
 
 .p-home-entry__links .c-link-button {
+  width: rem(200);
+  padding-top: rem(18);
+  padding-right: rem(20);
+  padding-bottom: rem(18);
+  padding-left: rem(20);
+  font-size: rem(16);
+
   @include mq("md") {
     width: rem(200);
     padding-top: rem(18);
@@ -59,6 +68,9 @@
 }
 
 .p-home-entry__links .c-link-button--outline {
+  padding-top: rem(17);
+  padding-bottom: rem(17);
+
   @include mq("md") {
     padding-top: rem(17);
     padding-bottom: rem(17);

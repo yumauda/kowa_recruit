@@ -1,8 +1,8 @@
 @use "../global" as *;
 
 .p-footer {
-  padding-top: rem(24);
-  padding-bottom: rem(24);
+  padding-top: 0;
+  padding-bottom: rem(9);
   background-color: #080a0b;
 
   @include mq("md") {
@@ -19,7 +19,7 @@
 
 .p-footer__logo {
   display: block;
-  width: rem(180);
+  width: rem(184);
 
   @include mq("md") {
     width: rem(260);
@@ -34,13 +34,15 @@
 }
 
 .p-footer__copyright {
-  margin-top: rem(14);
+  margin-top: rem(-8);
   color: rgba($white, 0.8);
-  font-family: $second-font-family;
-  font-size: rem(12);
+  font-family: $section-label-font-family;
+  font-size: rem(11);
   text-align: center;
 
   @include mq("md") {
+    margin-top: rem(14);
+    font-family: $second-font-family;
     font-size: rem(11);
   }
 }

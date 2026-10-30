@@ -1,8 +1,8 @@
 @use "../global" as *;
 
 .p-home-interviews {
-  padding-top: rem(32);
-  padding-bottom: rem(26);
+  padding-top: rem(54);
+  padding-bottom: rem(47);
   background-color: #f2f1ee;
 
   @include mq("md") {
@@ -19,12 +19,25 @@
   }
 }
 
+.p-home-interviews__heading {
+  max-width: rem(312);
+  margin-right: auto;
+  margin-left: auto;
+
+  @include mq("md") {
+    max-width: none;
+    margin-right: 0;
+    margin-left: 0;
+  }
+}
+
 .p-home-interviews__label {
   color: #ed0015;
   font-family: $section-label-font-family;
   font-size: rem(14);
   font-weight: 700;
   letter-spacing: 0.1em;
+  line-height: 2;
 
   @include mq("md") {
     font-size: rem(20);
@@ -32,7 +45,7 @@
 }
 
 .p-home-interviews__title {
-  margin-top: rem(10);
+  margin-top: 0;
   color: #333;
   font-size: rem(24);
   font-weight: 100;
@@ -47,7 +60,7 @@
   display: flex;
   align-items: flex-start;
   width: calc(100% + rem(30));
-  margin-top: rem(18);
+  margin-top: rem(17);
   margin-left: rem(-15);
 
   @include mq("md") {
@@ -165,22 +178,29 @@
 }
 
 .p-home-interviews__group {
-  width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: rem(120);
   margin-top: rem(10);
-  padding-top: rem(6);
+  padding-top: rem(5);
   padding-right: rem(10);
-  padding-bottom: rem(6);
+  padding-bottom: rem(5);
   padding-left: rem(10);
   background-color: #ed0015;
   color: $white;
-  font-size: rem(14);
+  font-size: rem(16);
   font-weight: 100;
   line-height: 1;
 
   @include mq("md") {
+    display: block;
+    width: fit-content;
     margin-top: rem(30);
+    padding-top: rem(6);
     padding-left: rem(24);
     padding-right: rem(24);
+    padding-bottom: rem(6);
     font-size: rem(18);
   }
 }
@@ -190,7 +210,7 @@
   color: #444;
   font-size: rem(16);
   font-weight: 100;
-  line-height: 1.45;
+  line-height: 1.3125;
 
   @include mq("md") {
     margin-top: rem(20);
@@ -200,12 +220,14 @@
 }
 
 .p-home-interviews__name {
-  margin-top: rem(10);
+  margin-top: rem(7);
   color: #555;
   font-size: rem(14);
   font-weight: 100;
+  line-height: 1.75;
 
   @include mq("md") {
+    margin-top: rem(10);
     font-size: rem(18);
   }
 }

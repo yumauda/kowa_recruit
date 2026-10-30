@@ -30,7 +30,7 @@
 
 .p-home-message__body {
   z-index: 1;
-  padding-top: rem(72);
+  padding-top: rem(80);
   padding-bottom: rem(48);
 
   @include mq("md") {
@@ -64,14 +64,14 @@
 
 .p-home-message__title {
   max-width: rem(300);
-  margin-top: rem(1);
+  margin-top: 0;
   margin-right: auto;
   margin-left: auto;
   color: #333;
   font-size: rem(22);
   font-weight: 100;
   letter-spacing: 0.05em;
-  line-height: 1.34;
+  line-height: 1.4545;
   text-align: center;
 
   @include mq("md") {
@@ -87,13 +87,14 @@
 
 .p-home-message__text {
   max-width: rem(312);
-  margin-top: rem(30);
+  margin-top: rem(25);
   margin-right: auto;
   margin-left: auto;
   color: #333;
+  font-feature-settings: "palt";
   font-size: rem(16);
   font-weight: 100;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.03em;
   line-height: 2;
 
   @include mq("md") {
@@ -101,6 +102,8 @@
     margin-top: rem(18);
     margin-right: 0;
     margin-left: 0;
+    font-feature-settings: normal;
     font-size: rem(18);
+    letter-spacing: 0.02em;
   }
 }

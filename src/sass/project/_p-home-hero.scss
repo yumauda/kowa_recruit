@@ -14,7 +14,7 @@
 .p-home-hero__body {
   z-index: 2;
   padding-top: rem(105);
-  padding-bottom: rem(6);
+  padding-bottom: rem(1);
 
   @include mq("md") {
     grid-area: 1 / 1;
@@ -33,13 +33,15 @@
 
 .p-home-hero__title {
   color: $white;
-  font-size: clamp(rem(39), 11.3vw, rem(44));
+  font-feature-settings: "palt";
+  font-size: rem(38);
   font-weight: 100;
   letter-spacing: 0.025em;
-  line-height: 1.38;
+  line-height: 1.3158;
   text-align: center;
 
   @include mq("md") {
+    font-feature-settings: normal;
     font-size: clamp(rem(48), 4.45vw, rem(64));
     line-height: 1.35;
     text-align: left;
@@ -52,15 +54,23 @@
 }
 
 .p-home-hero__text {
-  margin-top: rem(22);
+  max-width: rem(312);
+  margin-top: rem(16);
+  margin-right: auto;
+  margin-left: auto;
   color: rgba($white, 0.64);
-  font-size: rem(13);
+  font-feature-settings: "palt";
+  font-size: rem(16);
   font-weight: 300;
   letter-spacing: 0.045em;
-  line-height: 2.35;
+  line-height: 2;
 
   @include mq("md") {
+    max-width: none;
     margin-top: rem(19);
+    margin-right: 0;
+    margin-left: 0;
+    font-feature-settings: normal;
     font-size: rem(16);
     line-height: 2;
   }
@@ -69,11 +79,17 @@
 .p-home-hero__links {
   display: flex;
   gap: rem(20);
-  margin-top: rem(12);
+  max-width: rem(312);
+  margin-top: rem(15);
+  margin-right: auto;
+  margin-left: auto;
 
   @include mq("md") {
     gap: rem(20);
+    max-width: none;
     margin-top: rem(22);
+    margin-right: 0;
+    margin-left: 0;
   }
 }
 
@@ -82,12 +98,12 @@
   align-items: center;
   justify-content: space-between;
   width: calc(50% - rem(10));
-  padding-top: rem(6);
+  padding-top: rem(5);
   padding-right: rem(8);
   padding-bottom: rem(10);
   border-bottom: 1px solid rgba($white, 0.46);
   color: rgba($white, 0.72);
-  font-size: rem(13);
+  font-size: rem(16);
   letter-spacing: 0.02em;
 
   @include mq("md") {

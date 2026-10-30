@@ -2,6 +2,7 @@
 
 .p-home-works {
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   overflow: hidden;
   background-color: #080a0b;
 }
@@ -32,7 +33,8 @@
 
 .p-home-works__body {
   z-index: 1;
-  padding-top: rem(73);
+  min-width: 0;
+  padding-top: rem(76);
   padding-bottom: rem(10);
 
   @include mq("md") {
@@ -59,6 +61,7 @@
   font-size: rem(14);
   font-weight: 700;
   letter-spacing: 0.1em;
+  line-height: 2;
 
   @include mq("md") {
     font-size: rem(20);
@@ -66,23 +69,26 @@
 }
 
 .p-home-works__title {
-  margin-top: rem(16);
+  margin-top: 0;
   color: $white;
-  font-size: rem(24);
+  font-feature-settings: "palt";
+  font-size: clamp(rem(20), 6.154vw, rem(24));
   font-weight: 100;
   letter-spacing: 0.05em;
-  line-height: 1.35;
+  line-height: 1.3333;
 
   @include mq("md") {
     margin-top: rem(12);
+    font-feature-settings: normal;
     font-size: rem(50);
   }
 }
 
 .p-home-works__text {
-  margin-top: rem(30);
+  margin-top: rem(46);
   color: rgba($white, 0.72);
-  font-size: rem(15);
+  font-feature-settings: "palt";
+  font-size: rem(16);
   font-weight: 100;
   letter-spacing: 0.05em;
   line-height: 2;
@@ -90,16 +96,28 @@
   @include mq("md") {
     max-width: rem(670);
     margin-top: rem(30);
+    font-feature-settings: normal;
     font-size: rem(18);
   }
 }
 
 .p-home-works .c-link-button {
-  margin-top: rem(30);
+  width: rem(230);
+  margin-top: rem(44);
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: rem(18);
+  padding-right: rem(20);
+  padding-bottom: rem(18);
+  padding-left: rem(20);
+  font-size: rem(16);
+  letter-spacing: 0.1em;
 
   @include mq("md") {
     width: rem(230);
     margin-top: rem(36);
+    margin-right: 0;
+    margin-left: 0;
     padding-top: rem(18);
     padding-bottom: rem(18);
   }
