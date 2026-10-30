@@ -102,6 +102,8 @@
 }
 
 .p-home-career__image {
+  --width: 0;
+
   aspect-ratio: 390 / 219;
   margin-top: rem(40);
   margin-right: calc($padding-sp * -1);
@@ -116,25 +118,34 @@
     margin-right: 0;
     margin-left: 0;
   }
+
+  @media (prefers-reduced-motion: reduce) {
+    --width: #{rem(400)};
+  }
 }
 
 .p-home-career__image::before {
   content: "";
   display: none;
   position: absolute;
-  aspect-ratio: 400 / 300;
-  width: rem(400);
+  width: var(--width);
+  height: rem(300);
   background-image: url(../images/common/top_career_bg.webp);
   background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+  background-position: left bottom;
+  background-size: rem(400) rem(300);
   pointer-events: none;
+  transition: width 0.8s cubic-bezier(0.19, 1, 0.22, 1);
   z-index: 0;
 
   @include mq("md") {
     display: block;
     left: rem(-30);
     bottom: rem(-30);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
   }
 }
 
@@ -170,17 +181,10 @@ figure.p-home-career__image.js-scroll-clip.is-view {
   }
 }
 
-.p-home-career__image.js-scroll-clip::before {
-  clip-path: inset(0 100% 0 0);
-  transition: clip-path 0.8s cubic-bezier(0.19, 1, 0.22, 1);
-
-  @media (prefers-reduced-motion: reduce) {
-    clip-path: none;
-    transition: none;
-  }
-}
-
-.p-home-career__image.js-scroll-clip.is-view::before,
 .p-home-career__image.js-scroll-clip.is-view picture {
   clip-path: inset(0 0 0 0);
+}
+
+.p-home-career__image.js-scroll-clip.is-view {
+  --width: #{rem(400)};
 }
