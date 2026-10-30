@@ -28,10 +28,6 @@
   }
 }
 
-.js-scroll-clip--reverse {
-  clip-path: inset(0 0 0 100%);
-}
-
 .js-opening-header.is-view,
 .js-opening-fade.is-view,
 .js-scroll-fade.is-view {
@@ -40,7 +36,6 @@
 }
 
 .js-opening-clip.is-view,
-.js-scroll-clip.is-view,
-.js-scroll-clip--reverse.is-view {
+.js-scroll-clip.is-view {
   clip-path: inset(0 0 0 0);
 }

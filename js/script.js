@@ -130,9 +130,8 @@ if (!prefersReducedMotion) {
   ));
 
   fadeTargets.forEach((element) => element.classList.add('js-scroll-fade'));
-  clipTargets.forEach((element, index) => {
+  clipTargets.forEach((element) => {
     element.classList.add('js-scroll-clip');
-    if (index % 2 === 1) element.classList.add('js-scroll-clip--reverse');
   });
 
   if ('IntersectionObserver' in window) {
