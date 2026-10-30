@@ -120,9 +120,9 @@
 
 .p-page-hero--works .p-page-hero__image {
   order: -1;
-  width: calc(100% - rem(27));
-  aspect-ratio: 363 / 180;
-  margin-left: rem(27);
+  width: calc(100% - rem(18));
+  aspect-ratio: 372 / 250;
+  margin-left: rem(18);
   border-bottom-left-radius: rem(54);
 
   @include mq("md") {
@@ -136,9 +136,21 @@
 
 .p-page-hero--works .p-page-hero__body {
   padding-top: rem(28);
+  padding-bottom: rem(11);
 
   @include mq("md") {
     padding-top: rem(102);
+    padding-bottom: rem(82);
+  }
+}
+
+.p-page-hero--works .p-page-hero__content {
+  width: calc(100% - rem(50));
+  margin-left: rem(25);
+
+  @include mq("md") {
+    width: 38%;
+    margin-left: 0;
   }
 }
 
@@ -155,5 +167,13 @@
 
   @include mq("md") {
     margin-top: rem(86);
+  }
+}
+
+.p-page-hero--works .p-page-hero__text {
+  margin-top: rem(16);
+
+  @include mq("md") {
+    margin-top: rem(34);
   }
 }

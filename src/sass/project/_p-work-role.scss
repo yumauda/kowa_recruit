@@ -12,11 +12,13 @@
 }
 
 .p-work-role--sales {
+  padding-bottom: rem(108);
   background-color: #f2f1ee;
 
   @include mq("md") {
     display: flow-root;
     padding-top: 0;
+    padding-bottom: rem(110);
   }
 }
 
@@ -66,14 +68,18 @@
 }
 
 .p-work-role__intro {
+  width: calc(100% - rem(50));
   margin-top: rem(-14);
+  margin-left: rem(25);
 
   @include mq("md") {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     align-items: start;
     column-gap: 0;
+    width: 100%;
     margin-top: rem(-38);
+    margin-left: 0;
   }
 }
 
@@ -100,11 +106,11 @@
 
 .p-work-role__en {
   position: absolute;
-  top: rem(8);
+  top: rem(28);
   right: 0;
   color: transparent;
   font-family: $second-font-family;
-  font-size: rem(54);
+  font-size: rem(42);
   -webkit-text-stroke: 1px #f5b6bb;
 
   @include mq("md") {
@@ -131,7 +137,7 @@
   position: relative;
   margin-top: rem(10);
   color: #444;
-  font-size: rem(30);
+  font-size: rem(26);
   font-weight: 100;
   line-height: 1.45;
 
@@ -164,7 +170,7 @@
 .p-work-role__work-title {
   margin-top: rem(58);
   color: #555;
-  font-size: rem(26);
+  font-size: rem(22);
   font-weight: 100;
   text-align: center;
 }
@@ -181,21 +187,25 @@
 }
 
 .p-work-role__steps {
+  width: calc(100% - rem(50));
   margin-top: rem(30);
+  margin-left: rem(25);
 
   @include mq("md") {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
+    width: 100%;
     margin-top: rem(44);
+    margin-left: 0;
   }
 }
 
 .p-work-role__steps article {
   display: grid;
-  grid-template-columns: rem(120) minmax(0, 1fr);
-  column-gap: rem(18);
-  padding-top: rem(18);
-  padding-bottom: rem(18);
+  grid-template-columns: rem(140) minmax(0, 1fr);
+  column-gap: rem(16);
+  padding-top: rem(10);
+  padding-bottom: rem(10);
   border-bottom: 1px solid #777;
 
   @include mq("md") {
@@ -239,7 +249,7 @@
 
 .p-work-role__steps h4 {
   color: #555;
-  font-size: rem(18);
+  font-size: rem(16);
   font-weight: 100;
 
   @include mq("md") { font-size: rem(20); text-align: center; }
@@ -256,9 +266,14 @@
 }
 
 .p-work-role__button.c-link-button {
+  width: rem(300);
+  max-width: rem(300);
   margin-top: rem(42);
   margin-right: auto;
   margin-left: auto;
+  padding-top: rem(18);
+  padding-bottom: rem(18);
+  font-size: rem(16);
 
   @include mq("md") {
     width: rem(300);

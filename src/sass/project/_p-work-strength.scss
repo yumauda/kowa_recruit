@@ -12,12 +12,19 @@
 }
 
 .p-work-strength__heading {
+  width: calc(100% - rem(50));
+  margin-left: rem(25);
   text-align: center;
+
+  @include mq("md") {
+    width: 100%;
+    margin-left: 0;
+  }
 }
 
 .p-work-strength__heading h2 {
   color: #444;
-  font-size: rem(30);
+  font-size: rem(24);
   font-weight: 100;
   letter-spacing: 0.04em;
 
@@ -27,14 +34,17 @@
 }
 
 .p-work-strength__heading p {
-  margin-top: rem(28);
+  margin-top: rem(18);
   color: #666;
   font-size: rem(15);
   font-weight: 100;
   line-height: 2;
+  text-align: left;
 
   @include mq("md") {
+    margin-top: rem(28);
     font-size: rem(18);
+    text-align: center;
   }
 }
 
@@ -42,14 +52,18 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: calc(100% - rem(50));
   margin-top: rem(48);
+  margin-left: rem(25);
   text-align: center;
 
   @include mq("md") {
     flex-direction: row;
     justify-content: center;
     column-gap: rem(86);
+    width: 100%;
     margin-top: rem(62);
+    margin-left: 0;
   }
 }
 

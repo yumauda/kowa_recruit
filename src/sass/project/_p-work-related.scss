@@ -2,7 +2,7 @@
 
 .p-work-related {
   padding-top: rem(40);
-  padding-bottom: rem(88);
+  padding-bottom: rem(112);
   background-color: #fff;
 
   @include mq("md") {
@@ -13,7 +13,7 @@
 
 .p-work-related h2 {
   color: #555;
-  font-size: rem(27);
+  font-size: rem(24);
   font-weight: 100;
   text-align: center;
 }
@@ -30,24 +30,47 @@
 }
 
 .p-work-related__layout {
+  width: calc(100% - rem(50));
   margin-top: rem(50);
+  margin-left: rem(25);
 
   @include mq("md") {
     display: flex;
     align-items: center;
     column-gap: clamp(rem(40), 6.944vw, rem(100));
+    width: 100%;
     margin-top: rem(60);
+    margin-left: 0;
   }
 }
 
 .p-work-related__layout figure {
+  position: relative;
+  z-index: 0;
+  width: calc(100% - rem(10));
   aspect-ratio: 4 / 3;
-  overflow: hidden;
 
   @include mq("md") {
     flex-basis: 41.667%;
     flex-grow: 0;
     flex-shrink: 1;
+    width: auto;
+  }
+}
+
+.p-work-related__layout figure::after {
+  position: absolute;
+  z-index: -1;
+  right: rem(-10);
+  bottom: rem(-10);
+  width: 100%;
+  height: 100%;
+  background-image: repeating-linear-gradient(135deg, #ed0015 0, #ed0015 1px, transparent 1px, transparent 4px);
+  content: "";
+
+  @include mq("md") {
+    right: rem(-18);
+    bottom: rem(-18);
   }
 }
 
@@ -59,7 +82,7 @@
 .p-work-related__layout h3 {
   margin-top: rem(42);
   color: #444;
-  font-size: clamp(rem(26), 7.69vw, rem(30));
+  font-size: rem(26);
   font-weight: 100;
   line-height: 1.45;
   white-space: nowrap;
@@ -83,7 +106,13 @@
 }
 
 .p-work-related .c-link-button {
+  width: rem(230);
   margin-top: rem(34);
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: rem(18);
+  padding-bottom: rem(18);
+  font-size: rem(16);
 
   @include mq("md") {
     width: rem(230);
